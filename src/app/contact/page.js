@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link'
 
 config.autoAddCss = false;
 
@@ -13,10 +14,10 @@ export default function ContactPage() {
                 <title>Contact Jacob Hazzard</title>
             </Head>
             <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <link href="/" className="hover:text-black text-gray-600 f2"><a>Home</a></link>
-                <link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</link>
-                <link href="#listings" className="hover:text-black text-gray-600 f2">Listings</link>
-                <link href="#about" className="hover:text-black text-gray-600 f2">About</link>
+                <Link href="/" className="hover:text-black text-gray-600 f2">Home</Link>
+                <Link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</Link>
+                <Link href="#listings" className="hover:text-black text-gray-600 f2">Listings</Link>
+                <Link href="#about" className="hover:text-black text-gray-600 f2">About</Link>
             </nav>
             {/* Page Banner */}
             <section className="relative h-[50vh] bg-cover bg-center flex items-center justify-center text-white"
@@ -28,34 +29,34 @@ export default function ContactPage() {
                 </div>
             </section>
             {/* <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <link href="#about" className="hover:text-black text-gray-600 f2">About</link>
-                <link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</link>
-                <link href="#listings" className="hover:text-black text-gray-600 f2">Listings</link> */}
-                {/* <link href="#contact" className="hover:text-black text-gray-600 f2">Contact</link> */}
+                <Link href="#about" className="hover:text-black text-gray-600 f2">About</Link>
+                <Link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</Link>
+                <Link href="#listings" className="hover:text-black text-gray-600 f2">Listings</Link> */}
+                {/* <Link href="#contact" className="hover:text-black text-gray-600 f2">Contact</Link> */}
             {/* </nav> */}
             {/* Contact Info */}
             <section className="bg-white py-16 px-6 text-center">
                 <h2 className="text-3xl font-semibold mb-6 f1">Direct Contact</h2>
                 <div className="space-y-3 text-gray-700 f2">
-                    <p>✉️ Email: <link href="mailto:jacob@example.com" className="text-blue-600 hover:underline">jacob@example.com</link></p>
-                    <p>📞 Phone: <link href="tel:+1234567890" className="text-blue-600 hover:underline">(123) 456-7890</link></p>
+                    <p>✉️ Email: <Link href="mailto:jacob@example.com" className="text-blue-600 hover:underline">jacob@example.com</Link></p>
+                    <p>📞 Phone: <Link href="tel:+1234567890" className="text-blue-600 hover:underline">(123) 456-7890</Link></p>
                     <div className="flex justify-center space-x-6 mt-4 text-2xl text-gray-600">
-                        <link href="#" className="hover:text-black" >
+                        <Link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faInstagram} />
                             <span className="sr-only">Instagram</span>
-                        </link>
-                        <link href="#" className="hover:text-black" >
+                        </Link>
+                        <Link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faLinkedin} />
                             <span className="sr-only">Linkedin</span>
-                        </link>
-                        <link href="#" className="hover:text-black" >
+                        </Link>
+                        <Link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faFacebook} />
                             <span className="sr-only">Facebook</span>
-                        </link>
-                        <link href="#" className="hover:text-black" >
+                        </Link>
+                        <Link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faTwitter} />
                             <span className="sr-only">Twitter</span>
-                        </link>
+                        </Link>
                     </div>
                 </div>
             </section>
