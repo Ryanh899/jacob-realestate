@@ -13,10 +13,10 @@ export default function ContactPage() {
                 <title>Contact Jacob Hazzard</title>
             </Head>
             <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <a href="/" className="hover:text-black text-gray-600 f2">Home</a>
-                <a href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</a>
-                <a href="#listings" className="hover:text-black text-gray-600 f2">Listings</a>
-                <a href="#about" className="hover:text-black text-gray-600 f2">About</a>
+                <link href="/" className="hover:text-black text-gray-600 f2">Home</link>
+                <link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</link>
+                <link href="#listings" className="hover:text-black text-gray-600 f2">Listings</link>
+                <link href="#about" className="hover:text-black text-gray-600 f2">About</link>
             </nav>
             {/* Page Banner */}
             <section className="relative h-[50vh] bg-cover bg-center flex items-center justify-center text-white"
@@ -28,30 +28,30 @@ export default function ContactPage() {
                 </div>
             </section>
             {/* <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <a href="#about" className="hover:text-black text-gray-600 f2">About</a>
-                <a href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</a>
-                <a href="#listings" className="hover:text-black text-gray-600 f2">Listings</a> */}
-                {/* <a href="#contact" className="hover:text-black text-gray-600 f2">Contact</a> */}
+                <link href="#about" className="hover:text-black text-gray-600 f2">About</link>
+                <link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</link>
+                <link href="#listings" className="hover:text-black text-gray-600 f2">Listings</link> */}
+                {/* <link href="#contact" className="hover:text-black text-gray-600 f2">Contact</link> */}
             {/* </nav> */}
             {/* Contact Info */}
             <section className="bg-white py-16 px-6 text-center">
                 <h2 className="text-3xl font-semibold mb-6 f1">Direct Contact</h2>
                 <div className="space-y-3 text-gray-700 f2">
-                    <p>✉️ Email: <a href="mailto:jacob@example.com" className="text-blue-600 hover:underline">jacob@example.com</a></p>
-                    <p>📞 Phone: <a href="tel:+1234567890" className="text-blue-600 hover:underline">(123) 456-7890</a></p>
+                    <p>✉️ Email: <link href="mailto:jacob@example.com" className="text-blue-600 hover:underline">jacob@example.com</link></p>
+                    <p>📞 Phone: <link href="tel:+1234567890" className="text-blue-600 hover:underline">(123) 456-7890</link></p>
                     <div className="flex justify-center space-x-6 mt-4 text-2xl text-gray-600">
-                        <a href="#" className="hover:text-black" aria-label="Instagram">
+                        <link href="#" className="hover:text-black" aria-label="Instagram">
                             <FontAwesomeIcon icon={faInstagram} />
-                        </a>
-                        <a href="#" className="hover:text-black" aria-label="LinkedIn">
+                        </link>
+                        <link href="#" className="hover:text-black" aria-label="LinkedIn">
                             <FontAwesomeIcon icon={faLinkedin} />
-                        </a>
-                        <a href="#" className="hover:text-black" aria-label="Facebook">
+                        </link>
+                        <link href="#" className="hover:text-black" aria-label="Facebook">
                             <FontAwesomeIcon icon={faFacebook} />
-                        </a>
-                        <a href="#" className="hover:text-black" aria-label="Twitter">
+                        </link>
+                        <link href="#" className="hover:text-black" aria-label="Twitter">
                             <FontAwesomeIcon icon={faTwitter} />
-                        </a>
+                        </link>
                     </div>
                 </div>
             </section>

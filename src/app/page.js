@@ -28,7 +28,7 @@ export default function Home() {
         <section className="py-20 bg-[#f0eeea] text-center px-4">
           <h2 className="text-xl font-light tracking-widest uppercase mb-6 f1">A Modern Real Estate Philosophy</h2>
           <p className="max-w-xl mx-auto text-lg f2">
-            Jacob's approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
+            Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
           </p>
         </section>
 
@@ -37,21 +37,21 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center mb-10 f1">Past Listings & Renovation Wins</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <img src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
               <div className="p-6 text-left">
                 <h3 className="text-lg font-medium mb-2 f2">$120K Over Asking</h3>
                 <p className="text-sm text-gray-600 f2">Modernized kitchen and exterior staging created maximum appeal.</p>
               </div>
             </div>
             <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <img src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
               <div className="p-6 text-left">
                 <h3 className="text-lg font-medium mb-2 f2">Sold in 48 Hours</h3>
                 <p className="text-sm text-gray-600 f2">Luxury townhome fully reimagined with buyer appeal in mind.</p>
               </div>
             </div>
             <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <img src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Past Work" className="w-full h-56 object-cover" />
               <div className="p-6 text-left">
                 <h3 className="text-lg font-medium mb-2 f2">Record Neighborhood Sale</h3>
                 <p className="text-sm text-gray-600 f2">Pre-sale renovations drove ROI and buyer competition.</p>
@@ -65,7 +65,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center mb-10 f1">Featured Listings</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-white rounded-xl shadow overflow-hidden">
-              <img src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
               <div className="p-5">
                 <h3 className="text-lg font-semibold">123 Ocean View Blvd</h3>
                 <p className="text-sm text-gray-600 mb-2 f2">4 Bed • 3 Bath • $2.4M</p>
@@ -73,7 +73,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white rounded-xl shadow overflow-hidden">
-              <img src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
               <div className="p-5">
                 <h3 className="text-lg font-semibold f2">456 Hillside Drive</h3>
                 <p className="text-sm text-gray-600 mb-2 f2">5 Bed • 4 Bath • $3.1M</p>
@@ -81,7 +81,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white rounded-xl shadow overflow-hidden">
-              <img src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
+              <Image src="https://via.placeholder.com/400x250" alt="Listing" className="w-full h-56 object-cover" />
               <div className="p-5">
                 <h3 className="text-lg font-semibold f2">789 Coastal Road</h3>
                 <p className="text-sm text-gray-600 mb-2 f2">3 Bed • 2 Bath • $1.9M</p>
