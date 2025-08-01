@@ -13,7 +13,7 @@ export default function ContactPage() {
                 <title>Contact Jacob Hazzard</title>
             </Head>
             <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <link href="/" className="hover:text-black text-gray-600 f2">Home</link>
+                <link href="/" className="hover:text-black text-gray-600 f2"><a>Home</a></link>
                 <link href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</link>
                 <link href="#listings" className="hover:text-black text-gray-600 f2">Listings</link>
                 <link href="#about" className="hover:text-black text-gray-600 f2">About</link>
@@ -40,17 +40,21 @@ export default function ContactPage() {
                     <p>✉️ Email: <link href="mailto:jacob@example.com" className="text-blue-600 hover:underline">jacob@example.com</link></p>
                     <p>📞 Phone: <link href="tel:+1234567890" className="text-blue-600 hover:underline">(123) 456-7890</link></p>
                     <div className="flex justify-center space-x-6 mt-4 text-2xl text-gray-600">
-                        <link href="#" className="hover:text-black" aria-label="Instagram">
+                        <link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faInstagram} />
+                            <span className="sr-only">Instagram</span>
                         </link>
-                        <link href="#" className="hover:text-black" aria-label="LinkedIn">
+                        <link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faLinkedin} />
+                            <span className="sr-only">Linkedin</span>
                         </link>
-                        <link href="#" className="hover:text-black" aria-label="Facebook">
+                        <link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faFacebook} />
+                            <span className="sr-only">Facebook</span>
                         </link>
-                        <link href="#" className="hover:text-black" aria-label="Twitter">
+                        <link href="#" className="hover:text-black" >
                             <FontAwesomeIcon icon={faTwitter} />
+                            <span className="sr-only">Twitter</span>
                         </link>
                     </div>
                 </div>
