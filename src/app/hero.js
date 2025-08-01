@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import ScrollButton from './scrollButton';
 import Link from 'next/link'
-import Image from 'next/image';
 
 
 const heroImages = [

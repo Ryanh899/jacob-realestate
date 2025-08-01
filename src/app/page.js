@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import HeroSlideshow from './hero';
-
+import Image from 'next/image';
 
 export default function Home() {
   return (
