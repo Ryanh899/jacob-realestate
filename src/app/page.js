@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import HeroSlideshow from './hero';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -9,13 +10,14 @@ export default function Home() {
         {/* Hero Section */}
         <HeroSlideshow />
         {/* Navigation Bar */}
-        <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-          <a href="#successes" className="hover:text-black text-gray-600 f2">Recent Sales</a>
-          <a href="#listings" className="hover:text-black text-gray-600 f2">Listings</a>
-          <a href="/contact" className="hover:text-black text-gray-600 f2">Contact</a>
-          <a href="#about" className="hover:text-black text-gray-600 f2">About</a>
-        </nav>
-
+        <div>
+          <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
+            <Link href="/listings" className="hover:text-gray-400 hover:underline text-gray-600 f2">Listings</Link>
+            <Link href="/about" className="hover:text-gray-400 hover:underline text-gray-600 f2">About</Link>
+            <Link href="/testimonials" className="hover:text-gray-400 hover:underline text-gray-600 f2">Testimonials</Link>
+            <Link href="/contact" className="hover:text-gray-400 hover:underline text-gray-600 f2">Contact</Link>
+          </nav>
+        </div>
         {/* About Section */}
         <section className="py-24 px-4 text-center bg-white" id="about">
           <h2 className="text-3xl font-semibold mb-4 f1">Meet Jacob Hazzard</h2>
@@ -125,7 +127,7 @@ export default function Home() {
         <section id="contact" className="py-24 bg-white text-center">
           <h2 className="text-3xl font-semibold mb-4 f1">Let’s Connect</h2>
           <p className="mb-6 text-lg text-gray-600 f2">Thinking of buying, selling, or renovating? Reach out to Jacob directly.</p>
-          <a href="mailto:jacob@example.com" className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-900 transition">Contact Jacob</a>
+          <a href="/contact" className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-900 transition">Contact Jacob</a>
         </section>
 
         {/* Footer */}
