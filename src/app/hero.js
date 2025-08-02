@@ -6,9 +6,9 @@ import Link from 'next/link'
 
 
 const heroImages = [
-    '/cordoba2.jpg',
-    '/hero2.jpg',
-    '/hero3.jpg',
+    '/cordoba5.jpeg',
+    '/cordoba4.jpeg',
+    '/cordoba7.jpeg',
 ];
 
 const SLIDE_DURATION = 6000;
