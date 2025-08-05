@@ -19,13 +19,58 @@ export default function Home() {
           </nav>
         </div> */}
         {/* About Section */}
-        <section className="py-24 px-4 text-center bg-white" id="about">
-          <h2 className="text-3xl font-semibold mb-4 f1">Meet Jacob Hazzard</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-700 f2">
+        {/* <section className="py-1 px-1 text-center bg-white" id="about"></section> */}
+        <div className='py-5 bg-black/30 justify-center items-center'>
+          <Image
+            src="/white-transparent-bigger.png"
+            alt="Logo"
+            width={400}
+            height={250}
+            className="w-35 h-30 object-cover justify-center mx-auto"
+          />
+          <p className="text-lg text-white leading-relaxed font-body text-center pb-10 px-20" style={{ fontFamily: 'Montserrat' }} >
             With years of experience in high-end real estate and a sharp eye for profitable renovations, Jacob delivers tailored service and stunning results. From strategic upgrades to record-breaking sales, his client-first approach ensures luxury with impact.
           </p>
-        </section>
+        </div>
+        <section id="about" className="relative flex flex-col lg:flex-row bg-white overflow-hidden py-25">
+          {/* Left side image (fixed on larger screens) */}
+          <div className="relative w-full lg:w-3/5 h-[40vh] lg:h-[40vh]">
+            <Image
+              src="/client2.jpeg"
+              alt="Jacob Hazzard"
+              fill
+              priority
+              className="object-cover object-center lg:sticky lg:top-0 h-full w-full"
+            />
+            {/* Optional: dark overlay for contrast on smaller screens */}
+            <div className="lg:hidden absolute inset-0 bg-black/40" />
+          </div>
+          {/* Right side content */}
+          <div className="w-full lg:w-2/5 flex items-center justify-center px-6 py-6 bg-white z-10">
+            <div className="max-w-md text-left space-y-6">
+              {/* Trust Layer */}
+              <p className="text-sm uppercase tracking-widest text-gray-500 font-semibold font-title">
+                Your Trusted Advocate
+              </p>
 
+              {/* Headline Layer */}
+              <h2 className="text-4xl lg:text-5xl font-heading text-black leading-tight f1">
+                Real Estate with Precision, Integrity, and Vision
+              </h2>
+
+              {/* Supporting Body */}
+              <p className="text-base text-gray-700 leading-relaxed font-body f2">
+                Jacob Hazzard combines years of luxury market expertise with the mindset of a builder, renovator, and advocate. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
+              </p>
+              <div className="flex text-2xl text-gray-600">
+                <button href='/contact' className="font-montserrat font-light border border-black text-black bg-transparent px-20 py-3 text-lg tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                  Work with Jacob
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </section>
         {/* Mission Statement */}
         <section className="py-20 bg-[#f0eeea] text-center px-4">
           <h2 className="text-xl font-light tracking-widest uppercase mb-6 f1">A Modern Real Estate Philosophy</h2>

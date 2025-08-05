@@ -43,32 +43,37 @@ function HeroSlideshow() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 z-20" />
 
             {/* Top Transparent Nav */}
-            <nav className="absolute top-0 left-0 right-0 z-40 px-8 py-6 flex justify-between items-center text-sm bg-black/0 text-white tracking-wide uppercase">
+            <nav className="absolute top-0 left-0 right-0 z-40 px-8 flex justify-between items-center text-sm bg-black/0 text-white tracking-wide uppercase">
                 <div className="font-bold text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>
                     {/* Jacob Hazzard */}
                     <Image
-                        src="/logo1.png"
+                        src="/white-transparent-bigger.png"
                         alt="Logo"
                         width={400}
                         height={250}
-                        className="w-full h-56 object-cover"
+                        className="w-full h-50 object-cover"
                     />
 
                 </div>
 
                 <div className="space-x-6 flex">
                     {[
-                        { label: 'Listings', href: '/listings' },
+                        // { label: 'Listings', href: '/listings' },
                         { label: 'About', href: '/about' },
+                        { label: 'Sell', href: '/sell' },
+                        { label: 'Buy', href: '/buy' },
                         { label: 'Testimonials', href: '/testimonials' },
-                        { label: 'Contact', href: '/contact' },
+                        // { label: 'Contact', href: '/contact' },
                     ].map(({ label, href }) => (
                         <Link key={label} href={href} className="group relative">
-                            <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300">
+                            <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '15px' }}>
                                 {label}
                             </span>
                         </Link>
                     ))}
+                    <button href='/contact' className="font-montserrat font-light border border-white text-white bg-transparent px-7 py-3 text-lg tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
+                        Contact
+                    </button>
                 </div>
             </nav>
             {/* Centered Content */}
