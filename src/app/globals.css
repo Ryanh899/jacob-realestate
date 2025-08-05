@@ -22,6 +22,17 @@
   font-family: 'Roboto', sans-serif;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(0); }
+}
+
+
 /* Playfair Display
 Lato
 Libre Baskerville
