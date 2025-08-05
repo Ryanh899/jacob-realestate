@@ -10,14 +10,14 @@ export default function Home() {
         {/* Hero Section */}
         <HeroSlideshow />
         {/* Navigation Bar */}
-        <div>
+        {/* <div>
           <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
             <Link href="/listings" className="hover:text-gray-400 hover:underline text-gray-600 f2">Listings</Link>
             <Link href="/about" className="hover:text-gray-400 hover:underline text-gray-600 f2">About</Link>
             <Link href="/testimonials" className="hover:text-gray-400 hover:underline text-gray-600 f2">Testimonials</Link>
             <Link href="/contact" className="hover:text-gray-400 hover:underline text-gray-600 f2">Contact</Link>
           </nav>
-        </div>
+        </div> */}
         {/* About Section */}
         <section className="py-24 px-4 text-center bg-white" id="about">
           <h2 className="text-3xl font-semibold mb-4 f1">Meet Jacob Hazzard</h2>

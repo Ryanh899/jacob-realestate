@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import ScrollButton from './scrollButton';
-import Link from 'next/link'
-
+import Link from 'next/link';
+import Image from 'next/image';
 
 const heroImages = [
     '/cordoba5.jpeg',
@@ -42,6 +42,35 @@ function HeroSlideshow() {
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 z-20" />
 
+            {/* Top Transparent Nav */}
+            <nav className="absolute top-0 left-0 right-0 z-40 px-8 py-6 flex justify-between items-center text-sm bg-black/0 text-white tracking-wide uppercase">
+                <div className="font-bold text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    {/* Jacob Hazzard */}
+                    <Image
+                        src="/logo1.png"
+                        alt="Logo"
+                        width={400}
+                        height={250}
+                        className="w-full h-56 object-cover"
+                    />
+
+                </div>
+
+                <div className="space-x-6 flex">
+                    {[
+                        { label: 'Listings', href: '/listings' },
+                        { label: 'About', href: '/about' },
+                        { label: 'Testimonials', href: '/testimonials' },
+                        { label: 'Contact', href: '/contact' },
+                    ].map(({ label, href }) => (
+                        <Link key={label} href={href} className="group relative">
+                            <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300">
+                                {label}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
+            </nav>
             {/* Centered Content */}
             <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-6">
                 <h1
@@ -56,18 +85,16 @@ function HeroSlideshow() {
                 >
                     Luxury Real Estate • Renovation Specialist • Client-First Approach
                 </h2>
-                {/* <a
-                    href="#contact"
-                    className="mt-10 bg-white text-black px-6 py-3 rounded-full shadow hover:bg-gray-100 transition font-medium"
-                >
-                    Let’s Connect →
-                </a> */}
-
                 <Link
-                  href="/contact"
-                  className="mt-10 bg-white text-black px-6 py-3 rounded-full shadow hover:bg-gray-100 transition font-medium"
+                    href="/contact"
+                    className="mt-10 inline-flex items-center gap-2 text-white text-lg tracking-wider group transition-all duration-300"
                 >
-                  Let’s Connect →
+                    <span className="relative after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300">
+                        Let’s Connect
+                    </span>
+                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
+                        →
+                    </span>
                 </Link>
                 <ScrollButton />
             </div>

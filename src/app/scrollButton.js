@@ -5,7 +5,7 @@ import React from 'react';
 const ScrollButton = () => {
     const handleScroll = () => {
         const pageHeight = document.documentElement.scrollHeight;
-        const scrollAmount = pageHeight * 0.25; // 3/4 of the page height
+        const scrollAmount = pageHeight * 0.23; // 3/4 of the page height
         window.scrollTo({
             top: scrollAmount,
             behavior: 'smooth' // For a smooth scrolling animation
@@ -19,7 +19,7 @@ const ScrollButton = () => {
             role="button" // Improve accessibility
             aria-label="Scroll down" // Improve accessibility
         >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
         </div>
