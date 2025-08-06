@@ -16,7 +16,7 @@ const ScrollButton = () => {
 
   return (
 <div
-  className="absolute bottom-12 md:bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce text-white cursor-pointer"
+  className="absolute bottom-24 md:bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce text-white cursor-pointer"
   onClick={handleScroll}
   role="button"
   aria-label="Scroll down"
