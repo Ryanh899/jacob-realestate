@@ -102,7 +102,7 @@ export default function Home() {
         </section>
 
         <PastSuccessSlideshow />
-        <section className="pt-20 pb-12.5 text-center px-4 bg-[#f1ece3]"></section>
+        <section className="pt-20 pb-12.5 text-center px-4 bg-[#f1ece3] hidden md:block"></section>
         {/* Mission Statement */}
         <section className="pt-20 pb-12.5 text-center px-4 bg-gray-700">
           <h2 className="text-2xl font-light tracking-widest uppercase mb-6 f1 text-white">A Modern Real Estate Philosophy</h2>
