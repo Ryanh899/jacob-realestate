@@ -61,21 +61,46 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="relative h-[35vh] bg-fixed bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/cordoba7.jpeg')" }}>
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/30 z-0" />
-          {/* Foreground Content */}
-          <div className="relative z-10 flex items-center justify-center h-full px-4">
-            <div className="text-white text-center max-w-2xl">
-              <h2 className="text-3xl lg:text-4xl font-semibold mb-3 f1">
-                A Modern Real Estate Philosophy
-              </h2>
-              <p className="text-base lg:text-lg font-light f2">
-                Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
-              </p>
+        {/* Sticky / Fixed Image Scroll Section */}
+        <section className="relative">
+          {/* For larger screens: fixed background */}
+          <div className="hidden md:block relative h-[35vh] bg-fixed bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/cordoba7.jpeg')" }}>
+            <div className="absolute inset-0 bg-black/30 z-0" />
+            <div className="relative z-10 flex items-center justify-center h-full px-4">
+              <div className="text-white text-center max-w-2xl">
+                <h2 className="text-3xl lg:text-4xl font-semibold mb-3 f1">
+                  A Modern Real Estate Philosophy
+                </h2>
+                <p className="text-base lg:text-lg font-light f2">
+                  Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* For small screens: image with sticky scroll effect */}
+          <div className="md:hidden relative h-[40vh]">
+            <Image
+              src="/cordoba7.jpeg"
+              alt="Scroll Background"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/40 z-0" />
+            <div className="relative z-10 flex items-center justify-center h-full px-4">
+              <div className="text-white text-center max-w-xl">
+                <h2 className="text-2xl font-semibold mb-2 f1">
+                  A Modern Real Estate Philosophy
+                </h2>
+                <p className="text-sm font-light f2">
+                  Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
+                </p>
+              </div>
             </div>
           </div>
         </section>
+
         <PastSuccessSlideshow />
         <section className="pt-20 pb-12.5 text-center px-4 bg-[#f1ece3]"></section>
         {/* Mission Statement */}
