@@ -71,7 +71,7 @@ export default function Home() {
                 A Modern Real Estate Philosophy
               </h2>
               <p className="text-base lg:text-lg font-light f2">
-                Jacob's approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
+                Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
               </p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
         <FeaturedListings />
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-white text-center">
-          <h2 className="text-3xl font-semibold mb-4 f1">Let’s Connect</h2>
+          <h2 className="text-3xl font-semibold mb-4 f1">Let&apos;s Connect</h2>
           <p className="mb-6 text-lg text-gray-600 f2">Thinking of buying, selling, or renovating? Reach out to Jacob directly.</p>
           <a href="/contact" className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-900 transition">Contact Jacob</a>
         </section>

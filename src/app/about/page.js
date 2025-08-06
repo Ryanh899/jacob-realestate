@@ -66,7 +66,7 @@ export default function About() {
                 {/* CTA Section */}
                 <section className="py-24 bg-[#f0eeea] text-center">
                     <h2 className="text-3xl font-semibold mb-4 f1">Work With Jacob</h2>
-                    <p className="mb-6 text-lg text-gray-600 f2">Let’s turn your next move into a success story. From staging to closing, Jacob brings strategy and style to every sale.</p>
+                    <p className="mb-6 text-lg text-gray-600 f2">Let&apos;s turn your next move into a success story. From staging to closing, Jacob brings strategy and style to every sale.</p>
                     <a href="/contact" className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-900 transition">Schedule a Consultation</a>
                 </section>
 

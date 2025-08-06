@@ -154,7 +154,7 @@ function HeroSlideshow() {
                     className="mt-10 inline-flex items-center gap-2 text-white text-lg tracking-wider group transition-all duration-300"
                 >
                     <span className="relative after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300">
-                        Let’s Connect
+                        Let&apos;s Connect
                     </span>
                     <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                         →
