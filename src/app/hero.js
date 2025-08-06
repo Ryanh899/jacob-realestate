@@ -50,7 +50,7 @@ function HeroSlideshow() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 z-20" />
 
             {/* Desktop Nav */}
-            <nav className="absolute top-0 left-0 right-0 z-40 px-8 py-6 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
+            <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
                 <Image
                     src="/white-transparent-bigger.png"
                     alt="Logo"

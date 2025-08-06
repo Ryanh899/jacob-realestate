@@ -2,6 +2,8 @@ import Head from 'next/head';
 import HeroSlideshow from './hero';
 import Image from 'next/image';
 import Link from 'next/link';
+import PastSuccessSlideshow from './pastSection';
+import FeaturedListings from './listingSection';
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
       <main className="text-gray-800 bg-[#f9f7f4]" >
         {/* Hero Section */}
         <HeroSlideshow />
+
         {/* Navigation Bar */}
         {/* <div>
           <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
@@ -18,32 +21,17 @@ export default function Home() {
             <Link href="/contact" className="hover:text-gray-400 hover:underline text-gray-600 f2">Contact</Link>
           </nav>
         </div> */}
-        {/* About Section */}
-        {/* <section className="py-1 px-1 text-center bg-white" id="about"></section> */}
-        <div className='py-5 bg-black/30 justify-center items-center'>
-          <Image
-            src="/white-transparent-bigger.png"
-            alt="Logo"
-            width={400}
-            height={250}
-            className="w-35 h-30 object-cover justify-center mx-auto"
-          />
-          <p className="text-lg text-white leading-relaxed font-body text-center pb-10 px-20" style={{ fontFamily: 'Montserrat' }} >
-            With years of experience in high-end real estate and a sharp eye for profitable renovations, Jacob delivers tailored service and stunning results. From strategic upgrades to record-breaking sales, his client-first approach ensures luxury with impact.
-          </p>
-        </div>
-        <section id="about" className="relative flex flex-col lg:flex-row bg-white overflow-hidden py-25">
+        <section className="py-10 text-center px-4 bg-[#f1ece3] md:hidden"></section>
+        <section id="about" className="relative flex flex-col lg:flex-row bg-white overflow-hidden py-25 pt-0 pb-10 md:pt-45 md:pb-45">
           {/* Left side image (fixed on larger screens) */}
-          <div className="relative w-full lg:w-3/5 h-[40vh] lg:h-[40vh]">
+          <div className="relative w-full lg:w-3/5 h-85 lg:h-auto lg:sticky lg:top-0 xl:h-200 xl:w-3/5">
             <Image
               src="/client2.jpeg"
               alt="Jacob Hazzard"
               fill
               priority
-              className="object-cover object-center lg:sticky lg:top-0 h-full w-full"
+              className="object-cover object-center"
             />
-            {/* Optional: dark overlay for contrast on smaller screens */}
-            <div className="lg:hidden absolute inset-0 bg-black/40" />
           </div>
           {/* Right side content */}
           <div className="w-full lg:w-2/5 flex items-center justify-center px-6 py-6 bg-white z-10">
@@ -62,112 +50,52 @@ export default function Home() {
               <p className="text-base text-gray-700 leading-relaxed font-body f2">
                 Jacob Hazzard combines years of luxury market expertise with the mindset of a builder, renovator, and advocate. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
               </p>
-              <div className="flex text-2xl text-gray-600">
-                <button href='/contact' className="font-montserrat font-light border border-black text-black bg-transparent px-20 py-3 text-lg tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
-                  Work with Jacob
+              <div className="flex text-md md:text-xl text-gray-600">
+                <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                  Buy with Jacob
+                </button>
+                <button href='/sell' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                  Sell with Jacob
                 </button>
               </div>
             </div>
           </div>
-
         </section>
+        <section className="relative h-[35vh] bg-fixed bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/cordoba7.jpeg')" }}>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/30 z-0" />
+          {/* Foreground Content */}
+          <div className="relative z-10 flex items-center justify-center h-full px-4">
+            <div className="text-white text-center max-w-2xl">
+              <h2 className="text-3xl lg:text-4xl font-semibold mb-3 f1">
+                A Modern Real Estate Philosophy
+              </h2>
+              <p className="text-base lg:text-lg font-light f2">
+                Jacob's approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
+              </p>
+            </div>
+          </div>
+        </section>
+        <PastSuccessSlideshow />
+        <section className="pt-20 pb-12.5 text-center px-4 bg-[#f1ece3]"></section>
         {/* Mission Statement */}
-        <section className="py-20 bg-[#f0eeea] text-center px-4">
-          <h2 className="text-xl font-light tracking-widest uppercase mb-6 f1">A Modern Real Estate Philosophy</h2>
-          <p className="max-w-xl mx-auto text-lg f2">
+        <section className="pt-20 pb-12.5 text-center px-4 bg-gray-700">
+          <h2 className="text-2xl font-light tracking-widest uppercase mb-6 f1 text-white">A Modern Real Estate Philosophy</h2>
+          <p className="max-w-xl mx-auto text-lg f2 text-white font-light">
             Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
           </p>
-        </section>
-
-        {/* Past Successes */}
-        <section className="py-20 bg-white px-4" id="successes">
-          <h2 className="text-3xl font-semibold text-center mb-10 f1">Past Listings & Renovation Wins</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <Image
-                src="/cordoba1.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />              <div className="p-6 text-left">
-                <h3 className="text-lg font-medium mb-2 f2">$120K Over Asking</h3>
-                <p className="text-sm text-gray-600 f2">Modernized kitchen and exterior staging created maximum appeal.</p>
-              </div>
-            </div>
-            <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <Image
-                src="/cordoba2.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />              <div className="p-6 text-left">
-                <h3 className="text-lg font-medium mb-2 f2">Sold in 48 Hours</h3>
-                <p className="text-sm text-gray-600 f2">Luxury townhome fully reimagined with buyer appeal in mind.</p>
-              </div>
-            </div>
-            <div className="shadow-md rounded-2xl overflow-hidden bg-[#fdfdfd]">
-              <Image
-                src="/cordoba3.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />              <div className="p-6 text-left">
-                <h3 className="text-lg font-medium mb-2 f2">Record Neighborhood Sale</h3>
-                <p className="text-sm text-gray-600 f2">Pre-sale renovations drove ROI and buyer competition.</p>
-              </div>
-            </div>
+          <div className="py-0 flex justify-center items-center ">
+            <Image
+              src="/white-transparent-bigger.png"
+              alt="Logo"
+              width={400}
+              height={250}
+              className="w-40 h-35 object-cover mx-auto"
+            />
           </div>
         </section>
-
         {/* Current Listings */}
-        <section className="py-20 bg-[#f0eeea] px-4" id="listings">
-          <h2 className="text-3xl font-semibold text-center mb-10 f1">Featured Listings</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white rounded-xl shadow overflow-hidden">
-              <Image
-                src="/cordoba6.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />               <div className="p-5">
-                <h3 className="text-lg font-semibold">123 Ocean View Blvd</h3>
-                <p className="text-sm text-gray-600 mb-2 f2">4 Bed • 3 Bath • $2.4M</p>
-                <a href="#" className="text-blue-600 font-medium">View Details →</a>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow overflow-hidden">
-              <Image
-                src="/cordoba2.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />               <div className="p-5">
-                <h3 className="text-lg font-semibold f2">456 Hillside Drive</h3>
-                <p className="text-sm text-gray-600 mb-2 f2">5 Bed • 4 Bath • $3.1M</p>
-                <a href="#" className="text-blue-600 font-medium f2">View Details →</a>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow overflow-hidden">
-              <Image
-                src="/cordoba4.jpeg"
-                alt="Past Work"
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />               <div className="p-5">
-                <h3 className="text-lg font-semibold f2">789 Coastal Road</h3>
-                <p className="text-sm text-gray-600 mb-2 f2">3 Bed • 2 Bath • $1.9M</p>
-                <a href="#" className="text-blue-600 font-medium f2">View Details →</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <FeaturedListings />
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-white text-center">
           <h2 className="text-3xl font-semibold mb-4 f1">Let’s Connect</h2>

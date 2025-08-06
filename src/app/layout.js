@@ -2,6 +2,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Head from 'next/head';
 import "./globals.css";
 import { Inter, Montserrat, Roboto, Playfair_Display, Merriweather } from 'next/font/google'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'aos/dist/aos.css';
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
