@@ -38,7 +38,7 @@ export default function About() {
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/20 z-10" />
                     <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
-                        <a href='/' >
+                        <Link href='/' >
                             <Image
                                 src="/white-transparent-bigger.png"
                                 alt="Logo"
@@ -46,7 +46,7 @@ export default function About() {
                                 height={250}
                                 className="w-full max-w-[200px] object-contain"
                             />
-                        </a>
+                        </Link>
                         <div className="space-x-6 flex items-center">
                             {navItems.map(({ label, href }) => (
                                 <Link key={label} href={href} className="group relative">
@@ -74,7 +74,7 @@ export default function About() {
                             Meet Jacob Hazzard
                         </h1>
                         <p className="text-lg md:text-2xl font-light f2 text-white/90">
-                            A real estate strategist with a builder's eye and a designer’s touch — serving San Clemente and the OC coast.
+                            A real estate strategist with a builder&apos;s eye and a designer&apos;s touch — serving San Clemente and the OC coast.
                         </p>
                     </motion.div>
 
@@ -123,7 +123,7 @@ export default function About() {
                             transition={{ duration: 0.8 }}
                             className="text-2xl italic font-light f2 text-gray-700 mb-6"
                         >
-                            “Jacob didn’t just sell our home — he elevated it.”
+                            “Jacob didn&apos;t just sell our home — he elevated it.”
                         </motion.blockquote>
                         <p className="text-sm uppercase tracking-widest f2 text-gray-500">— Client in Dana Point</p>
                     </div>
@@ -139,7 +139,7 @@ export default function About() {
                                 More Than Just Real Estate
                             </h2>
                             <p className="text-lg md:text-md text-gray-300 font-light f2 leading-relaxed">
-                                Jacob Hazzard is a lifelong San Clemente resident who brings a deep personal connection to Orange County and a client-first approach to every real estate transaction. As an Eagle Scout and a graduate of Westmont College with a degree in Economics and Business, Jacob’s foundation is built on trust, discipline, and service—values that show up in every detail of his work.
+                                Jacob Hazzard is a lifelong San Clemente resident who brings a deep personal connection to Orange County and a client-first approach to every real estate transaction. As an Eagle Scout and a graduate of Westmont College with a degree in Economics and Business, Jacob&apos;s foundation is built on trust, discipline, and service—values that show up in every detail of his work.
                             </p>
                             <br></br>
 
@@ -241,9 +241,9 @@ export default function About() {
                         <button
                             className="inline-flex items-center gap-3 text-white border border-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
                         >
-                            <a href="/contact" >
+                            <Link href="/contact" >
                                 Schedule a Consultation →
-                            </a>
+                            </Link>
                         </button>
                     </motion.div>
                 </section>
@@ -291,7 +291,7 @@ export default function About() {
 
                         {/* Right Column - Branding */}
                         <div className="flex flex-col items-start md:items-end">
-                            <img src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <Image src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
                             <p className="text-xs text-gray-400">
                                 Jacob Hazzard | CA DRE# 02222037 <br />
                                 Luxre Realty | CA DRE# 01897290
@@ -301,7 +301,7 @@ export default function About() {
 
                     {/* Bottom Bar */}
                     <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
-                        <p>© {new Date().getFullYear()} Your Name Real Estate Group. All rights reserved.</p>
+                        <p>© {new Date().getFullYear()} Jacob Hazzard Real Estate Group. All rights reserved.</p>
                         <div className="flex gap-5 mt-3 md:mt-0">
                             <a href="#" className="hover:text-white transition">Privacy Policy</a>
                             <a href="#" className="hover:text-white transition">Terms of Use</a>

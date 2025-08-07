@@ -184,7 +184,7 @@ export default function Home() {
 
                         {/* Right Column - Branding */}
                         <div className="flex flex-col items-start md:items-end">
-                            <img src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <Image src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
                             <p className="text-xs text-gray-400">
                                 Your Name | CA DRE# 01346878 <br />
                                 Coldwell Banker Realty | CA DRE# 00616212
