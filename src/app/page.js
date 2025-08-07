@@ -122,16 +122,42 @@ export default function Home() {
         {/* Current Listings */}
         <FeaturedListings />
         {/* Contact Section */}
-        <section id="contact" className="py-24 bg-white text-center">
-          <h2 className="text-3xl font-semibold mb-4 f1">Let&apos;s Connect</h2>
-          <p className="mb-6 text-lg text-gray-600 f2">Thinking of buying, selling, or renovating? Reach out to Jacob directly.</p>
-          <a href="/contact" className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-900 transition">Contact Jacob</a>
+        <section id="contact" className="relative bg-[#f9f7f4] py-24 px-6 text-center overflow-hidden">
+          {/* Optional: Background Accent Image */}
+          <div className="absolute inset-0 opacity-10 bg-[url('/cordoba5.jpeg')] bg-cover bg-center z-0 hidden md:block" />
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-3xl font-heading f1 text-gray-900 mb-6">
+              Let’s Connect & Make Your Move Exceptional
+            </h2>
+            <p className="text-lg md:text-lg font-light text-gray-700 f2 mb-10">
+              Whether you’re buying, selling, or transforming a property, Jacob Hazzard brings precision, vision, and proven results. Let’s talk about your goals.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-gray-700 text-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              Start the Conversation
+            </a>
+          </div>
         </section>
 
         {/* Footer */}
-        <footer className="bg-[#f0eeea] text-center py-6 text-sm text-gray-600 f2">
-          <p>&copy; {new Date().getFullYear()} Jacob Hazzard Real Estate. CA DRE #01234567</p>
+        <footer className="bg-gray-900 text-white text-sm py-8 px-4">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-center md:text-left">
+              <p className="font-light">
+                &copy; {new Date().getFullYear()} Jacob Hazzard Real Estate &nbsp;|&nbsp; CA DRE #02222037
+              </p>
+            </div>
+            <div className="flex space-x-6 text-gray-400">
+              <a href="/listings" className="hover:text-white transition">Listings</a>
+              <a href="/about" className="hover:text-white transition">About</a>
+              <a href="/testimonials" className="hover:text-white transition">Testimonials</a>
+              <a href="/contact" className="hover:text-white transition">Contact</a>
+            </div>
+          </div>
         </footer>
+
       </main>
     </>
   );
