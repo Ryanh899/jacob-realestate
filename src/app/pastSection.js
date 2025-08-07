@@ -57,12 +57,17 @@ export default function PastSuccessSlideshow() {
   return (
     <section id="successes" className="py-20 pb-0 bg-[#fdfaf5] text-gray-800">
       <h2
-        className="text-5xl font-light text-center mb-16 f1"
+        className="text-center mb-20 text-6xl font-extralight tracking-tight text-gray-900"
         data-aos="fade-down"
       >
-        Past Listings & Renovation Wins
+        <span className="font-medium text-[3rem] text-black leading-tight">
+          Success Stories 
+          <span> </span>
+          <span className="font-light text-gray-500 text-2xl uppercase tracking-widest mb-4">
+            Signature Results
+        </span>
+        </span>
       </h2>
-
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={40}
@@ -95,7 +100,7 @@ export default function PastSuccessSlideshow() {
               {/* Right: Content */}
               <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-[#fffefc] to-[#f1ece3] relative z-20">
                 <p
-                  className="text-xs uppercase tracking-widest text-[#b29567] font-semibold mb-2"
+                  className="text-md uppercase tracking-widest text-[#b29567] font-semibold mb-2"
                   data-aos="fade-right"
                 >
                   {listing.address}
@@ -128,7 +133,7 @@ export default function PastSuccessSlideshow() {
 
                 <a
                   href="/contact"
-                  className="inline-block self-start mt-auto border border-[#b29567] text-[#b29567] px-6 py-2 text-sm uppercase tracking-wider hover:bg-[#b29567] hover:text-white transition duration-300"
+                  className="inline-block self-start mt-auto border border-[#b29567] text-[#b29567] px-6 py-2 text-lg uppercase tracking-wider hover:bg-[#b29567] hover:text-white transition duration-300"
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >

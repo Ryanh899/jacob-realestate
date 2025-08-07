@@ -1,12 +1,22 @@
 // About.jsx
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function About() {
+    const pathname = usePathname();
+    const navItems = [
+        { label: 'About', href: '/about' },
+        { label: 'Sell', href: '/sell' },
+        { label: 'Buy', href: '/buy' },
+        { label: 'Testimonials', href: '/testimonials' },
+    ];
+
     return (
         <>
             <Head>
@@ -16,133 +26,91 @@ export default function About() {
                     content="Learn more about Jacob Hazzard, a real estate expert based in San Clemente, CA. Specializing in renovations and high-value sales."
                 />
             </Head>
-
             <main className="text-gray-900 bg-[#f1f0eb] font-sans">
                 {/* Navigation */}
-                <nav className="bg-white/90 backdrop-blur-sm shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                    <Link href="/" className="hover:text-gray-500 text-gray-700 f2">Home</Link>
-                    <Link href="/listings" className="hover:text-gray-500 text-gray-700 f2">Listings</Link>
-                    <Link href="/about" className="text-black underline font-semibold f2">About</Link>
-                    <Link href="/testimonials" className="hover:text-gray-500 text-gray-700 f2">Testimonials</Link>
-                    <Link href="/contact" className="hover:text-gray-500 text-gray-700 f2">Contact</Link>
-                </nav>
 
                 {/* Hero Section */}
                 <section
-                    className="relative h-[80vh] bg-cover bg-center flex flex-col justify-between px-6 py-10"
-                    style={{ backgroundImage: "url('/cordoba2.jpeg')" }}
+                    className="relative h-[100vh] bg-cover bg-center flex flex-col justify-start px-0 "
+                    style={{ backgroundImage: "url('/ameno3.jpeg')" }}
+                    key={`about-hero-${pathname}`}
                 >
-                    {/* Overlay: darker black with bottom gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/75 to-black/30 z-10" />
-
-                    {/* Title near top */}
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/20 z-10" />
+                    <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
+                        <a href='/' >
+                            <Image
+                                src="/white-transparent-bigger.png"
+                                alt="Logo"
+                                width={400}
+                                height={250}
+                                className="w-full max-w-[200px] object-contain"
+                            />
+                        </a>
+                        <div className="space-x-6 flex items-center">
+                            {navItems.map(({ label, href }) => (
+                                <Link key={label} href={href} className="group relative">
+                                    <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '14px' }}>
+                                        {label}
+                                    </span>
+                                </Link>
+                            ))}
+                            <Link
+                                href="/contact"
+                                className="font-montserrat font-light border border-white text-white bg-transparent px-7 py-3 text-md tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105"
+                            >
+                                Contact
+                            </Link>
+                        </div>
+                    </nav>
+                    {/* Animated Title and Subtitle */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="relative z-20 max-w-4xl mx-auto text-center text-white"
+                        className="relative z-20 text-white text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-5xl md:text-6xl font-heading f1 leading-tight">
+                        <h1 className="text-5xl md:text-6xl font-bold f1 mb-4 mt-75">
                             Meet Jacob Hazzard
                         </h1>
-                        <p className="mt-4 text-xl md:text-2xl f2 font-light max-w-xl mx-auto">
+                        <p className="text-lg md:text-2xl font-light f2 text-white/90">
                             A real estate strategist with a builder's eye and a designer’s touch — serving San Clemente and the OC coast.
                         </p>
                     </motion.div>
 
-                    {/* Portrait & Bio near bottom */}
-                    {/* Portrait & Bio near bottom */}
+                    {/* Headshot and Bio */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 
-                                    bg-white bg-opacity-90 p-8 rounded-none shadow-lg"
-                        style={{ minHeight: '20rem' }}  // ensure some height so content can show
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="relative z-20 mt-auto mb-20 pb-12 flex flex-col md:flex-row items-center md:items-end gap-10 max-w-[1600px] w-full mx-auto px-0 "
                     >
-                        {/* Portrait */}
-                        <div className="flex-1 relative h-64 md:h-80 min-w-[200px]">
+                        {/* Headshot flush left and wide */}
+                        <div className="relative w-full md:w-1/2 aspect-[3/4] md:h-[500px]">
                             <Image
                                 src="/headshot1.jpg"
                                 alt="Jacob Hazzard"
                                 fill
-                                className="object-cover object-center rounded-none"
+                                className="object-contain object-center"
                                 priority
                             />
                         </div>
 
-                        {/* Bio text */}
-                        <div className="flex-1 text-gray-900">
-                            <p className="uppercase text-sm tracking-widest text-gray-600 mb-3 f2 font-semibold">
+                        {/* Bio content */}
+                        <div className="text-white max-w-xl px-6 md:px-0 md:pr-12 self-center">
+                            <p className="uppercase text-xl tracking-widest mb-2 f2 text-white/70">
                                 Behind the Sale
                             </p>
-                            <h2 className="text-3xl font-heading f1 mb-6">Experience. Vision. Results.</h2>
-                            <p className="text-base f2 font-light mb-4">
-                                With over a decade of experience, Jacob blends design with data to create record-setting homes and refined living spaces.
+                            <h2 className="text-4xl font-semibold f1 mb-4">
+                                Experience. Vision. Results.
+                            </h2>
+                            <p className="text-xl f2 font-light mb-3 text-white/90">
+                                Clients choose Jacob for more than just his local knowledge—they value his ability to listen, tailor strategies to their goals, and deliver results that feel both seamless and personal. Whether navigating a high-stakes coastal sale, helping a buyer land the perfect home, or guiding an investor toward the right opportunity, Jacob brings sharp market insight, consistent communication, and hands-on support from start to finish.
                             </p>
-                            <p className="text-base f2 font-light">
-                                His client-first approach transforms stress into confidence — and properties into works of art.
-                            </p>
+
                         </div>
                     </motion.div>
-                </section>
 
-                {/* Portrait & Bio */}
-                {/* <section className="bg-[#e9e6df] py-24 px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-          >
-            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/headshot1.jpg"
-                alt="Jacob Hazzard"
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-            <div>
-              <p className="uppercase text-sm tracking-widest text-gray-500 mb-3 f2">Behind the Sale</p>
-              <h2 className="text-3xl font-heading f1 mb-6 text-black">Experience. Vision. Results.</h2>
-              <p className="text-base text-gray-700 f2 font-light mb-4">
-                With over a decade of experience, Jacob blends design with data to create record-setting homes and refined living spaces.
-              </p>
-              <p className="text-base text-gray-700 f2 font-light">
-                His client-first approach transforms stress into confidence — and properties into works of art.
-              </p>
-            </div>
-          </motion.div>
-        </section> */}
-
-                {/* Story/Timeline Section */}
-                <section className="bg-[#dcd9d1] py-24 px-6">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="text-2xl uppercase tracking-widest f1 mb-10 text-gray-700"
-                        >
-                            A Proven Track Record
-                        </motion.h2>
-                        <div className="grid md:grid-cols-3 gap-10 text-left">
-                            {[
-                                { year: '2014', title: 'First Flip Sold', desc: 'Launched his career by turning a tired duplex into a showcase home.' },
-                                { year: '2018', title: 'Market Record', desc: 'Sold a coastal renovation for 23% over asking — redefining the local market.' },
-                                { year: '2022–Now', title: 'Strategic Partner', desc: 'Clients trust Jacob to guide buying, selling, and upgrading their most valuable assets.' },
-                            ].map((item, idx) => (
-                                <motion.div key={idx} whileHover={{ scale: 1.03 }} className="bg-white rounded-xl p-6 shadow-md">
-                                    <p className="text-sm text-gray-500 mb-1 f2">{item.year}</p>
-                                    <h3 className="text-xl font-semibold mb-2 f1">{item.title}</h3>
-                                    <p className="text-gray-700 font-light f2">{item.desc}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
                 </section>
 
                 {/* Quote/Testimonial Section */}
@@ -160,10 +128,105 @@ export default function About() {
                         <p className="text-sm uppercase tracking-widest f2 text-gray-500">— Client in Dana Point</p>
                     </div>
                 </section>
+                <section className="relative bg-[#2e2b28] px-6 py-24 text-white">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                        {/* Text Content */}
+                        <div className="w-full md:w-1/2 text-left">
+                            <p className="uppercase text-sm tracking-widest text-gray-400 mb-3 f2">
+                                A Personal Note
+                            </p>
+                            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 f1">
+                                More Than Just Real Estate
+                            </h2>
+                            <p className="text-lg md:text-md text-gray-300 font-light f2 leading-relaxed">
+                                Jacob Hazzard is a lifelong San Clemente resident who brings a deep personal connection to Orange County and a client-first approach to every real estate transaction. As an Eagle Scout and a graduate of Westmont College with a degree in Economics and Business, Jacob’s foundation is built on trust, discipline, and service—values that show up in every detail of his work.
+                            </p>
+                            <br></br>
+
+                        </div>
+                        {/* Image on the Right */}
+                        <div className="w-full md:w-1/2 relative h-[400px] md:h-[500px] overflow-hidden">
+                            <Image
+                                src="/headshot1.jpg" // Replace with your actual image path
+                                alt="Jacob Hazzard candid"
+                                fill
+                                className="object-contain object-center"
+                                priority
+                            />
+                        </div>
+                    </div>
+                </section>
+                {/* Values / Philosophy Section */}
+                <section className="relative bg-[#242220] text-white py-24 px-6">
+                    <div className="max-w-6xl mx-auto text-center mb-16">
+                        <p className="uppercase text-sm tracking-widest text-gray-400 mb-3 f2">
+                            My Philosophy
+                        </p>
+                        <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
+                            What Drives My Work
+                        </h2>
+                        <p className="text-lg md:text-xl text-gray-300 font-light f2 max-w-3xl mx-auto">
+                            Every decision, every detail, and every client relationship is guided by a clear set of values that ensure excellence and trust.
+                        </p>
+
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                        {/* Card 1 */}
+                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
+                            <Image
+                                src="/design.jpg" // swap for relevant image
+                                alt="Design Focus"
+                                width={60}
+                                height={60}
+                                className="mb-6 object-contain"
+                            />
+                            <h3 className="text-2xl font-semibold mb-4 f1">Design-Driven Approach</h3>
+                            <p className="text-gray-300 font-light f2">
+                                I believe great design transforms properties and maximizes value. From layout to lighting, no detail is overlooked.
+                            </p>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
+                            <Image
+                                src="/trust.jpg"
+                                alt="Trust"
+                                width={60}
+                                height={60}
+                                className="mb-6 object-contain"
+                            />
+                            <h3 className="text-2xl font-semibold mb-4 f1">Client-First Mindset</h3>
+                            <p className="text-gray-300 font-light f2">
+                                Your goals guide my every move. I listen, adapt, and act with your best interests at the forefront.
+                            </p>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
+                            <Image
+                                src="/results.jpg"
+                                alt="Results"
+                                width={60}
+                                height={60}
+                                className="mb-6 object-contain"
+                            />
+                            <h3 className="text-2xl font-semibold mb-4 f1">Results That Last</h3>
+                            <p className="text-gray-300 font-light f2">
+                                From record-breaking sales to lasting relationships, my work leaves a mark long after closing day.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                    <p className="text-lg md:text-md text-gray-300 font-light text-center f2 leading-relaxed p-10">
+                        Having spent his entire life in the area, Jacob understands the nuances of each neighborhood—from blufftop estates to off-market opportunities—and uses that insight to benefit every client he serves. Backed by a top-tier luxury brokerage, he offers a refined, relationship-driven experience grounded in integrity and performance.
+                    </p>
+                    </div>
+                </section>
 
                 {/* Call to Action */}
                 <section className="relative bg-black py-24 px-6 text-center text-white overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/cordoba4.jpeg')] opacity-10 bg-cover bg-center z-0" />
+                    <div className="absolute inset-0 bg-[url('/cordoba4.jpeg')] opacity-40 bg-cover bg-center z-0" />
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -175,29 +238,77 @@ export default function About() {
                         <p className="text-lg md:text-xl f2 font-light mb-10">
                             Whether buying, selling, or renovating — Jacob brings vision, clarity, and market mastery.
                         </p>
-                        <a
-                            href="/contact"
-                            className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 text-lg tracking-wide rounded-full shadow-md font-light hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+                        <button
+                            className="inline-flex items-center gap-3 text-white border border-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
                         >
-                            Schedule a Consultation →
-                        </a>
+                            <a href="/contact" >
+                                Schedule a Consultation →
+                            </a>
+                        </button>
                     </motion.div>
                 </section>
 
                 {/* Footer */}
-                <footer className="bg-[#1f1f1f] text-white text-sm py-8 px-4">
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="font-light text-center md:text-left">
-                            &copy; {new Date().getFullYear()} Jacob Hazzard Real Estate | CA DRE #01234567
-                        </p>
-                        <div className="flex space-x-6 text-gray-400">
-                            <a href="/listings" className="hover:text-white transition">Listings</a>
-                            <a href="/about" className="hover:text-white transition">About</a>
-                            <a href="/testimonials" className="hover:text-white transition">Testimonials</a>
-                            <a href="/contact" className="hover:text-white transition">Contact</a>
+                <footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700 pb-10">
+                        {/* Left Column - Brand */}
+                        <div>
+                            <h2 className="text-xl font-semibold tracking-widest mb-4">
+                                JACOB HAZZARD <span className="font-extralight">REAL ESTATE</span>
+                            </h2>
+                            <p className="text-sm text-gray-400">
+                                Delivering excellence in every transaction, from first-time buyers to luxury estates.
+                            </p>
+                        </div>
+
+                        {/* Middle Column - Contact Info */}
+                        <div>
+                            <h3 className="uppercase text-sm tracking-widest text-gray-400 mb-4">
+                                Contact Us
+                            </h3>
+                            <ul className="space-y-3">
+                                <li className="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 12H8m8-4H8m8 8H8m13 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14z" />
+                                    </svg>
+                                    <a href="mailto:info@yourgroup.com" className="hover:text-white transition">info@yourgroup.com</a>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-2 9m13-9l2 9m-5-6h.01" />
+                                    </svg>
+                                    (949) 478-2295
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
+                                    </svg>
+                                    222 Avenida Del Mar, <br />San Clemente, CA 92672
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Right Column - Branding */}
+                        <div className="flex flex-col items-start md:items-end">
+                            <img src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <p className="text-xs text-gray-400">
+                                Jacob Hazzard | CA DRE# 02222037 <br />
+                                Luxre Realty | CA DRE# 01897290
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Bottom Bar */}
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
+                        <p>© {new Date().getFullYear()} Your Name Real Estate Group. All rights reserved.</p>
+                        <div className="flex gap-5 mt-3 md:mt-0">
+                            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+                            <a href="#" className="hover:text-white transition">Terms of Use</a>
                         </div>
                     </div>
                 </footer>
+
             </main>
         </>
     );
