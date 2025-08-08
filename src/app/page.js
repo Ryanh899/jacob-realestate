@@ -6,6 +6,29 @@ import PastSuccessSlideshow from './pastSection';
 import FeaturedListings from './listingSection';
 import Footer from './footer';
 
+export const metadata = {
+  title: "Coastal Luxury Real Estate | Jacob Hazzard",
+  description:
+    "Where oceanfront elegance meets sophisticated market strategy. Discover your property's true potential.",
+  openGraph: {
+    title: "Coastal Luxury Real Estate | Jacob Hazzard",
+    description:
+      "Where oceanfront elegance meets sophisticated market strategy. Discover your property's true potential.",
+    url: "https://jacobhazzardrealestate.com",
+    siteName: "Jacob Hazzard Real Estate",
+    images: [
+      {
+        url: "/white-transparent-bigger.png", 
+        width: 1200,
+        height: 630,
+        alt: "Beautiful coastal home with ocean view",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <>
