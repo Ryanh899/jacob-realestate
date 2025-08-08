@@ -381,7 +381,7 @@ const BuyingPage = () => {
                                     </h2>
 
                                     <p className="text-gray-600 font-light">
-                                        Let's find your perfect coastal property together
+                                        Let&apos;s find your perfect coastal property together
                                     </p>
                                 </div>
                             </div>

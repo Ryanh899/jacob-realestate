@@ -65,12 +65,12 @@ const Navigation = () => {
     return (
         <div>
             <style jsx>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(-10px) scale(0.95); }
-                    to { opacity: 1; transform: translateY(0) scale(1); }
+                @keyframes slideDown {
+                    from { opacity: 0; transform: translateY(-8px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
-                .animate-fadeIn {
-                    animation: fadeIn 0.2s ease-out forwards;
+                .animate-slideDown {
+                    animation: slideDown 0.2s ease-out forwards;
                 }
             `}</style>
             {/* Desktop Navigation */}
@@ -91,7 +91,14 @@ const Navigation = () => {
                             key={label} 
                             className="relative group"
                             onMouseEnter={() => dropdownItems && setActiveDropdown(label)}
-                            onMouseLeave={() => setActiveDropdown(null)}
+                            onMouseLeave={() => {
+                                // Add delay to prevent flickering when moving to dropdown
+                                setTimeout(() => {
+                                    if (!document.querySelector('.dropdown-menu:hover')) {
+                                        setActiveDropdown(null);
+                                    }
+                                }, 100);
+                            }}
                         >
                             <div className="flex items-center">
                                 <Link 
@@ -104,11 +111,11 @@ const Navigation = () => {
                                 </Link>
                                 {dropdownItems && (
                                     <button
-                                        className="ml-2 p-1 rounded-full hover:bg-white/10 transition-all duration-200"
+                                        className="ml-2 p-1.5 rounded-full hover:bg-white/10 transition-all duration-300 group"
                                         onClick={() => setActiveDropdown(activeDropdown === label ? null : label)}
                                     >
                                         <svg 
-                                            className={`w-3.5 h-3.5 transition-all duration-300 ${activeDropdown === label ? 'rotate-180 scale-110' : ''}`}
+                                            className={`w-3.5 h-3.5 transition-all duration-500 group-hover:drop-shadow-sm ${activeDropdown === label ? 'rotate-180 scale-110' : 'group-hover:scale-110'}`}
                                             fill="none" 
                                             stroke="currentColor" 
                                             viewBox="0 0 24 24"
@@ -121,23 +128,26 @@ const Navigation = () => {
 
                             {/* Dropdown Menu */}
                             {dropdownItems && activeDropdown === label && (
-                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-56 bg-white/95 backdrop-blur-xl border-0 rounded-xl shadow-2xl overflow-hidden z-50 animate-fadeIn">
-                                    <div className="py-2">
-                                        {dropdownItems.map(({ label: itemLabel, href: itemHref }, index) => (
+                                <div 
+                                    className="dropdown-menu absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-56 bg-black/60 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden z-50 animate-slideDown"
+                                    onMouseEnter={() => setActiveDropdown(label)}
+                                    onMouseLeave={() => setActiveDropdown(null)}
+                                >
+                                    <div className="py-1">
+                                        {dropdownItems.map(({ label: itemLabel, href: itemHref }) => (
                                             <button
                                                 key={itemLabel}
                                                 onClick={() => {
                                                     handleSmoothScroll(itemHref);
                                                     setActiveDropdown(null);
                                                 }}
-                                                className="group relative w-full text-left px-6 py-3 text-sm text-gray-800 hover:text-black hover:bg-gray-50/80 transition-all duration-300 normal-case font-medium tracking-wide flex items-center justify-between"
+                                                className="group relative w-full text-left px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 normal-case tracking-wide flex items-center justify-between font-extralight font-roboto"
                                             >
                                                 <span className="relative">
                                                     {itemLabel}
-                                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                                                 </span>
                                                 <svg 
-                                                    className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" 
+                                                    className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-200" 
                                                     fill="none" 
                                                     stroke="currentColor" 
                                                     viewBox="0 0 24 24"
