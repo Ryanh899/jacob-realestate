@@ -20,10 +20,10 @@ export default function ContactPage() {
     const [status, setStatus] = useState('idle');
 
     const navItems = [
-        { label: 'About', href: '/about' },
         { label: 'Sell', href: '/sell' },
         { label: 'Buy', href: '/buy' },
-        { label: 'Testimonials', href: '/testimonials' },
+        { label: 'About', href: '/about' },
+        // { label: 'Testimonials', href: '/testimonials' },
     ];
 
     const handleSubmit = async (e) => {

@@ -25,10 +25,10 @@ function HeroSlideshow() {
     }, []);
 
     const navItems = [
-        { label: 'About', href: '/about' },
         { label: 'Sell', href: '/sell' },
         { label: 'Buy', href: '/buy' },
-        { label: 'Testimonials', href: '/testimonials' },
+        { label: 'About', href: '/about' },
+        // { label: 'Testimonials', href: '/testimonials' },
     ];
 
     return (

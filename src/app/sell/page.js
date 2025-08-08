@@ -22,10 +22,10 @@ export default function SellHomePage() {
     });
 
     const navItems = [
-        { label: 'About', href: '/about' },
         { label: 'Sell', href: '/sell' },
         { label: 'Buy', href: '/buy' },
-        { label: 'Testimonials', href: '/testimonials' },
+        { label: 'About', href: '/about' },
+        // { label: 'Testimonials', href: '/testimonials' },
     ];
 
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -81,7 +81,7 @@ export default function SellHomePage() {
 
     return (
         <div className="min-h-screen bg-white text-gray-900">
-            {/* Coastal Hero Section */}
+            {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                 {/* Background Image */}
                 <div
@@ -198,43 +198,43 @@ export default function SellHomePage() {
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 py-50 pb-0 md:py-20">
                     <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
-                        {/* Left Side - Coastal Luxury Content */}
+                        {/* Left Side - Content */}
                         <div className="text-white">
                             <div className="mb-8  hidden md:block">
                                 <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm px-8 py-4 border border-white/10 ">
                                     <MapPin className="h-5 w-5 text-blue-400" />
-                                    <span className="text-sm font-medium tracking-[0.15em] uppercase">Coastal Properties Specialist</span>
+                                    <span className="text-sm font-medium tracking-[0.15em] uppercase">Expert Real Estate Service</span>
                                 </div>
                             </div>
 
                             <h1 className="text-6xl lg:text-8xl font-extralight leading-[0.85] mb-8 tracking-tight">
-                                COASTAL
+                                EXCEPTIONAL
                                 <span className="block font-light text-blue-400 italic">
-                                    LUXURY
+                                    SERVICE
                                 </span>
                                 <span className="block text-4xl lg:text-5xl font-thin tracking-wider text-gray-300">
-                                    REDEFINED
+                                    EVERY PROPERTY
                                 </span>
                             </h1>
 
                             <div className="w-24 h-px bg-gradient-to-r from-blue-100 to-transparent mb-8"></div>
 
                             <p className="text-xl text-gray-200 leading-relaxed mb-12 font-light max-w-lg">
-                                Where oceanfront elegance meets sophisticated market strategy. Discover your coastal property&apos;s true market potential through precision analysis and expert positioning.
+                                Where personalized attention meets strategic market expertise. Discover your property&apos;s true potential through comprehensive analysis and proven results.
                             </p>
 
                             {/* Sharp Stats */}
                             <div className="grid grid-cols-3 gap-8 mb-12">
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">$4.2M</div>
+                                    <div className="text-3xl font-extralight text-blue-400 mb-1">$2.8M</div>
                                     <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Average Sale</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">97%</div>
+                                    <div className="text-3xl font-extralight text-blue-400 mb-1">98%</div>
                                     <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">List Price</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">12</div>
+                                    <div className="text-3xl font-extralight text-blue-400 mb-1">18</div>
                                     <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Days Market</div>
                                 </div>
                             </div>
@@ -251,14 +251,14 @@ export default function SellHomePage() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <div className="w-1 h-1 bg-blue-400"></div>
-                                    <span className="text-sm font-light uppercase tracking-wider">Ocean Expert</span>
+                                    <span className="text-sm font-light uppercase tracking-wider">Proven Results</span>
                                 </div>
                             </div>
                         </div>
 
                         <ScrollToValuation />
 
-                        {/* Right Side - Sharp Modern Form */}
+                        {/* Right Side - Form */}
                         <div className="relative">
                             <div className="bg-white/95 backdrop-blur-xl p-12 border border-gray-200/50 shadow-2xl">
                                 {/* Form Header */}
@@ -275,7 +275,7 @@ export default function SellHomePage() {
                                         </div>
                                     </div>
                                     <p className="text-gray-600 font-light leading-relaxed">
-                                        Receive your comprehensive coastal market analysis within 24 hours
+                                        Receive your comprehensive market analysis within 24 hours
                                     </p>
                                 </div>
 
@@ -419,12 +419,12 @@ export default function SellHomePage() {
                                                     className="w-full px-6 py-4 border-b-2 border-gray-200 focus:border-blue-500 transition-all font-light bg-transparent focus:outline-none"
                                                 >
                                                     <option value="">Select type</option>
+                                                    <option value="single-family">Single Family Home</option>
+                                                    <option value="condominium">Condominium</option>
+                                                    <option value="townhome">Townhome</option>
+                                                    <option value="luxury-home">Luxury Home</option>
                                                     <option value="oceanfront-estate">Oceanfront Estate</option>
-                                                    <option value="beachfront-villa">Beachfront Villa</option>
-                                                    <option value="coastal-condo">Coastal Condominium</option>
-                                                    <option value="waterfront-home">Waterfront Home</option>
-                                                    <option value="cliff-property">Cliffside Property</option>
-                                                    <option value="marina-residence">Marina Residence</option>
+                                                    <option value="investment-property">Investment Property</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -438,7 +438,7 @@ export default function SellHomePage() {
                                         </button>
 
                                         <p className="text-xs text-gray-500 text-center font-light leading-relaxed pt-4 border-t border-gray-100">
-                                            Confidential consultation. Jacob personally reviews every coastal property to deliver precise market insights within 24 hours.
+                                            Confidential consultation. Jacob personally reviews every property to deliver precise market insights within 24 hours.
                                         </p>
                                     </div>
                                 ) : (
@@ -451,7 +451,7 @@ export default function SellHomePage() {
                                         </h3>
                                         <div className="w-16 h-px bg-blue-500 mx-auto mb-4"></div>
                                         <p className="text-gray-600 font-light leading-relaxed">
-                                            Your coastal property analysis is in motion. Expect comprehensive market insights and strategic recommendations within 24 hours.
+                                            Your property analysis is in motion. Expect comprehensive market insights and strategic recommendations within 24 hours.
                                         </p>
                                     </div>
                                 )}
@@ -475,38 +475,38 @@ export default function SellHomePage() {
                             <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
                         </div>
                         <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">$75M+</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Coastal Sales</div>
+                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">$125M+</div>
+                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Total Sales</div>
                             <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
                         </div>
                         <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">285+</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Properties</div>
+                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">400+</div>
+                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Happy Clients</div>
                             <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
                         </div>
                         <div className="text-center group cursor-pointer">
                             <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">15yrs</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Coastal Focus</div>
+                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Experience</div>
                             <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Coastal Excellence Showcase */}
+            {/* Excellence Showcase */}
             <section className="py-32 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-24">
                         <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-500 font-medium mb-6">
-                            Coastal Real Estate Mastery
+                            Complete Real Estate Solutions
                         </div>
                         <h2 className="text-6xl lg:text-7xl font-extralight text-gray-900 mb-8 leading-tight tracking-tight">
-                            OCEANFRONT
+                            FULL-SERVICE
                             <span className="block text-blue-600 italic font-light">EXPERTISE</span>
                         </h2>
                         <div className="w-24 h-px bg-blue-500 mx-auto mb-8"></div>
                         <p className="text-xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
-                            Where coastal sophistication meets strategic precision. Every oceanfront property demands specialized knowledge, market positioning, and exclusive buyer networks.
+                            From first-time sellers to luxury estates, every property deserves strategic marketing, professional presentation, and dedicated personal service.
                         </p>
                     </div>
 
@@ -516,7 +516,7 @@ export default function SellHomePage() {
                             <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-slate-100 to-blue-100">
                                 <Image
                                     src="/ameno2.jpeg"
-                                    alt="Coastal Property Analysis"
+                                    alt="Market Analysis"
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
@@ -527,25 +527,25 @@ export default function SellHomePage() {
                             </div>
                             <div className="space-y-6">
                                 <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Coastal Market Intelligence
+                                    Strategic Market Positioning
                                 </h3>
                                 <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
                                 <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Advanced oceanfront analytics combining tide patterns, seasonal buyer behavior, and luxury coastal comparables to establish optimal market positioning.
+                                    Comprehensive market analysis combining neighborhood trends, buyer demographics, and pricing strategy to position your property for maximum value.
                                 </p>
                                 <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">Discover More</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider">Learn More</span>
                                     <ArrowRight className="h-4 w-4" />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Strategy 2 - Visual Storytelling */}
+                        {/* Strategy 2 - Professional Presentation */}
                         <div className="group cursor-pointer">
                             <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-blue-100 to-indigo-100">
                                 <Image
                                     src="/ameno2.jpeg"
-                                    alt="Luxury Photography"
+                                    alt="Professional Photography"
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
@@ -556,25 +556,25 @@ export default function SellHomePage() {
                             </div>
                             <div className="space-y-6">
                                 <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Cinematic Property Stories
+                                    Premium Property Marketing
                                 </h3>
                                 <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
                                 <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Architectural cinematography and drone artistry that captures the emotional connection between luxury living and coastal tranquility.
+                                    Professional photography, staging consultation, and targeted digital marketing that showcases your property's unique character and attracts qualified buyers.
                                 </p>
                                 <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">View Portfolio</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider">View Services</span>
                                     <ArrowRight className="h-4 w-4" />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Strategy 3 - Exclusive Networks */}
+                        {/* Strategy 3 - Personal Service */}
                         <div className="group cursor-pointer">
                             <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-indigo-100 to-purple-100">
                                 <Image
                                     src="/ameno2.jpeg"
-                                    alt="Luxury Service"
+                                    alt="Personal Service"
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
@@ -585,14 +585,14 @@ export default function SellHomePage() {
                             </div>
                             <div className="space-y-6">
                                 <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Exclusive Buyer Networks
+                                    Dedicated Personal Service
                                 </h3>
                                 <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
                                 <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Curated relationships with international luxury buyers, private yacht owners, and coastal lifestyle connoisseurs seeking their perfect oceanfront sanctuary.
+                                    Direct access to Jacob throughout your selling journey, with transparent communication, expert negotiation, and personalized guidance every step of the way.
                                 </p>
                                 <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">Our Network</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider">Meet Jacob</span>
                                     <ArrowRight className="h-4 w-4" />
                                 </div>
                             </div>
@@ -601,16 +601,16 @@ export default function SellHomePage() {
                 </div>
             </section>
 
-            {/* Coastal Properties Showcase */}
+            {/* Properties Showcase */}
             <section className="py-32 bg-slate-900">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-20 text-white">
                         <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-6">
-                            Recent Coastal Sales
+                            Recent Success Stories
                         </div>
                         <h2 className="text-6xl font-extralight mb-8 leading-tight tracking-tight">
-                            OCEANFRONT
-                            <span className="block text-blue-400 italic font-light">SUCCESSES</span>
+                            PROVEN
+                            <span className="block text-blue-400 italic font-light">RESULTS</span>
                         </h2>
                         <div className="w-24 h-px bg-blue-400 mx-auto"></div>
                     </div>
@@ -628,8 +628,8 @@ export default function SellHomePage() {
                                     SOLD
                                 </div>
                                 <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$6.8M</div>
-                                    <div className="text-sm opacity-80">Malibu Oceanfront</div>
+                                    <div className="text-2xl font-light">$2.4M</div>
+                                    <div className="text-sm opacity-80">Newport Beach Home</div>
                                 </div>
                             </div>
                         </div>
@@ -646,8 +646,8 @@ export default function SellHomePage() {
                                     SOLD
                                 </div>
                                 <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$4.2M</div>
-                                    <div className="text-sm opacity-80">Laguna Beach Villa</div>
+                                    <div className="text-2xl font-light">$1.8M</div>
+                                    <div className="text-sm opacity-80">Irvine Family Home</div>
                                 </div>
                             </div>
                         </div>
@@ -664,8 +664,8 @@ export default function SellHomePage() {
                                     SOLD
                                 </div>
                                 <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$8.9M</div>
-                                    <div className="text-sm opacity-80">Newport Waterfront</div>
+                                    <div className="text-2xl font-light">$4.2M</div>
+                                    <div className="text-sm opacity-80">Laguna Beach Estate</div>
                                 </div>
                             </div>
                         </div>
@@ -673,7 +673,7 @@ export default function SellHomePage() {
                 </div>
             </section>
 
-            {/* Sharp CTA Section */}
+            {/* CTA Section */}
             <section className="relative py-40 overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -692,14 +692,14 @@ export default function SellHomePage() {
                     </div>
 
                     <h2 className="text-6xl lg:text-7xl font-extralight mb-8 leading-tight tracking-tight">
-                        YOUR COASTAL
-                        <span className="block text-blue-400 italic font-light">LEGACY AWAITS</span>
+                        YOUR PROPERTY
+                        <span className="block text-blue-400 italic font-light">DESERVES MORE</span>
                     </h2>
 
                     <div className="w-24 h-px bg-blue-400 mx-auto mb-12"></div>
 
                     <p className="text-xl font-light text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed">
-                        Transform your oceanfront property into a strategic asset. Experience the precision of coastal luxury real estate mastery with Jacob&apos;s exclusive market approach.
+                        Whether you&apos;re selling your first home or a luxury estate, experience the difference that dedicated expertise and personalized service make in today&apos;s market.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-8 justify-center">
@@ -711,19 +711,19 @@ export default function SellHomePage() {
                             }}
                             className="bg-white text-slate-900 px-12 py-5 font-medium hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-4 group shadow-2xl transform hover:scale-105"
                         >
-                            <span className="text-lg uppercase tracking-wider">Begin Analysis</span>
+                            <span className="text-lg uppercase tracking-wider">Get Started</span>
                             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
                             href="/contact"
                             className="border-2 border-white/30 text-white px-12 py-5 font-medium hover:bg-white hover:text-slate-900 transition-all duration-300 backdrop-blur-sm"
                         >
-                            <span className="text-lg uppercase tracking-wider">Private Meeting</span>
+                            <span className="text-lg uppercase tracking-wider">Schedule Consultation</span>
                         </a>
                     </div>
                 </div>
 
-                {/* Floating coastal elements */}
+                {/* Floating elements */}
                 <div className="absolute top-20 left-20 opacity-20">
                     <Waves className="h-8 w-8 text-blue-400 animate-pulse" />
                 </div>

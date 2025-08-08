@@ -21,10 +21,10 @@ const BuyingPage = () => {
     const [expandedStep, setExpandedStep] = useState(null);
 
     const navItems = [
-        { label: 'About', href: '/about' },
         { label: 'Sell', href: '/sell' },
         { label: 'Buy', href: '/buy' },
-        { label: 'Testimonials', href: '/testimonials' },
+        { label: 'About', href: '/about' },
+        // { label: 'Testimonials', href: '/testimonials' },
     ];
 
     const buyersGuideSteps = [
@@ -162,13 +162,15 @@ const BuyingPage = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/65 to-blue-900/75"></div>
                     <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
-                        <Image
-                            src="/white-transparent-bigger.png"
-                            alt="Logo"
-                            width={400}
-                            height={250}
-                            className="w-full max-w-[200px] object-contain"
-                        />
+                        <Link href='/' >
+                            <Image
+                                src="/white-transparent-bigger.png"
+                                alt="Logo"
+                                width={400}
+                                height={250}
+                                className="w-full max-w-[200px] object-contain"
+                            />
+                        </Link>
 
                         <div className="space-x-6 flex items-center">
                             {navItems.map(({ label, href }) => (
@@ -280,7 +282,7 @@ const BuyingPage = () => {
                                 YOUR
                             </span>
                             <span className="block text-4xl lg:text-5xl font-thin tracking-wider text-gray-300">
-                                COASTAL HOME
+                                DREAM HOME
                             </span>
                         </h1>
 
@@ -335,7 +337,7 @@ const BuyingPage = () => {
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-6">
                             YOUR PATH TO
-                            <span className="block font-light text-blue-600 italic">COASTAL OWNERSHIP</span>
+                            <span className="block font-light text-blue-600 italic">HOME OWNERSHIP</span>
                         </h2>
                         <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
                             Navigate the luxury coastal real estate market with confidence. Our comprehensive guide ensures you make informed decisions at every step.
@@ -710,7 +712,7 @@ const BuyingPage = () => {
 
                         <h2 className="text-4xl lg:text-6xl font-extralight mb-8 tracking-tight">
                             START YOUR
-                            <span className="block font-light text-blue-400 italic">COASTAL JOURNEY</span>
+                            <span className="block font-light text-blue-400 italic">JOURNEY</span>
                         </h2>
 
                         <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto mb-12">
