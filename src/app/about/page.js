@@ -6,10 +6,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState  } from 'react';
 
 export default function About() {
     const pathname = usePathname();
+    const [menuOpen, setMenuOpen] = useState(false);
     const navItems = [
         { label: 'About', href: '/about' },
         { label: 'Sell', href: '/sell' },
@@ -31,7 +32,7 @@ export default function About() {
 
                 {/* Hero Section */}
                 <section
-                    className="relative h-[100vh] bg-cover bg-center flex flex-col justify-start px-0 "
+                    className="relative min-h-screen h-[130h] md:h-[100vh] bg-cover bg-center flex flex-col justify-start px-0 "
                     style={{ backgroundImage: "url('/ameno3.jpeg')" }}
                     key={`about-hero-${pathname}`}
                 >
@@ -63,6 +64,67 @@ export default function About() {
                             </Link>
                         </div>
                     </nav>
+
+                    <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
+                        <Image
+                            src="/white-transparent-bigger.png"
+                            alt="Logo"
+                            width={130}
+                            height={70}
+                            className="object-contain"
+                        />
+                        {/* Toggle Button */}
+                        <button
+                            className="focus:outline-none z-50"
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            aria-label={menuOpen ? "Close menu" : "Open menu"}
+                        >
+                            {menuOpen ? (
+                                // Close icon (X)
+                                <svg
+                                    className="w-6 h-6 text-white mb-8 mr-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            ) : (
+                                // Hamburger icon
+                                <div className="space-y-1 mr-5">
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                </div>
+                            )}
+                        </button>
+                    </div>
+                    {menuOpen && (
+                        <div
+                            className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white rounded-xl py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
+                            style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
+                        >
+                            {navItems.map(({ label, href }) => (
+                                <Link
+                                    key={label}
+                                    href={href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block text-base uppercase tracking-wider font-light hover:text-gray-300 py-2 transition"
+                                >
+                                    {label}
+                                </Link>
+                            ))}
+                            <Link
+                                href="/contact"
+                                onClick={() => setMenuOpen(false)}
+                                className="item-center mt-1 inline-block font-montserrat border border-white text-white bg-transparent px-12 py-2 text-base tracking-wider transition-all duration-300 hover:bg-white hover:text-black"
+                            >
+                                Contact
+                            </Link>
+                        </div>
+                    )}
+
                     {/* Animated Title and Subtitle */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -70,7 +132,7 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         className="relative z-20 text-white text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold f1 mb-4 mt-75">
+                        <h1 className="text-5xl md:text-6xl font-bold f1 mb-4 mt-50 2xl:mt-75">
                             Meet Jacob Hazzard
                         </h1>
                         <p className="text-lg md:text-2xl font-light f2 text-white/90">
@@ -83,10 +145,10 @@ export default function About() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="relative z-20 mt-auto mb-20 pb-12 flex flex-col md:flex-row items-center md:items-end gap-10 max-w-[1600px] w-full mx-auto px-0 "
+                        className="relative z-20 mt-0 md:mt-auto mb-20 pb-12 flex flex-col md:flex-row items-center md:items-end gap-10 max-w-[1600px] w-full mx-auto px-0 "
                     >
                         {/* Headshot flush left and wide */}
-                        <div className="relative w-full md:w-1/2 aspect-[3/4] md:h-[500px]">
+                        <div className="relative w-full h-[350px] mt-15 md:mt-0 md:w-1/2 aspect-[3/4] md:h-[500px]">
                             <Image
                                 src="/headshot1.jpg"
                                 alt="Jacob Hazzard"
@@ -218,9 +280,9 @@ export default function About() {
                         </div>
                     </div>
                     <div>
-                    <p className="text-lg md:text-md text-gray-300 font-light text-center f2 leading-relaxed p-10">
-                        Having spent his entire life in the area, Jacob understands the nuances of each neighborhood—from blufftop estates to off-market opportunities—and uses that insight to benefit every client he serves. Backed by a top-tier luxury brokerage, he offers a refined, relationship-driven experience grounded in integrity and performance.
-                    </p>
+                        <p className="text-lg md:text-md text-gray-300 font-light text-center f2 leading-relaxed p-10">
+                            Having spent his entire life in the area, Jacob understands the nuances of each neighborhood—from blufftop estates to off-market opportunities—and uses that insight to benefit every client he serves. Backed by a top-tier luxury brokerage, he offers a refined, relationship-driven experience grounded in integrity and performance.
+                        </p>
                     </div>
                 </section>
 
@@ -291,7 +353,7 @@ export default function About() {
 
                         {/* Right Column - Branding */}
                         <div className="flex flex-col items-start md:items-end">
-                            <Image src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <Image src="/coldwell-banker-logo.svg" width={60} height={60} alt="Coldwell Banker Realty" className="h-12 mb-4" />
                             <p className="text-xs text-gray-400">
                                 Jacob Hazzard | CA DRE# 02222037 <br />
                                 Luxre Realty | CA DRE# 01897290
