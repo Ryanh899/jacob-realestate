@@ -1,14 +1,24 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Home, MapPin, Calculator, CheckCircle, ArrowRight, DollarSign, TrendingUp, Shield, Clock, Users, Award, Search, Heart, Star, ChevronDown, ChevronUp } from 'lucide-react';
+import { Home, MapPin, Calculator, CheckCircle, ArrowRight, DollarSign, TrendingUp, Shield, Clock, Users, Award, Search, Heart, Star, ChevronDown, ChevronUp, X, Send, Mail, Phone, User, MessageSquare } from 'lucide-react';
 import Footer from '../footer';
 import Link from 'next/link';
-import Image from 'next/image';
+import Navigation from '../navbar';
 
 const BuyingPage = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
     const [activeGuideSection, setActiveGuideSection] = useState(0);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        budget: '',
+        timeline: '',
+        preferences: '',
+        message: ''
+    });
     const [mortgageData, setMortgageData] = useState({
         homePrice: '',
         downPayment: '',
@@ -135,6 +145,51 @@ const BuyingPage = () => {
         }));
     };
 
+    const handleFormChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('https://formspree.io/f/YOUR_FORM_KEY', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: 'New Home Buyer Inquiry',
+                })
+            });
+
+            if (response.ok) {
+                setFormSubmitted(true);
+                setTimeout(() => {
+                    setModalOpen(false);
+                    setFormSubmitted(false);
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        budget: '',
+                        timeline: '',
+                        preferences: '',
+                        message: ''
+                    });
+                }, 2000);
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+        }
+    };
+
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -153,6 +208,48 @@ const BuyingPage = () => {
 
     return (
         <div className="min-h-screen bg-white text-gray-900">
+            <style jsx>{`
+                @keyframes backdropFadeIn {
+                    from {
+                        background-color: rgba(15, 23, 42, 0);
+                        backdrop-filter: blur(0px);
+                    }
+                    to {
+                        background-color: rgba(15, 23, 42, 0.9);
+                        backdrop-filter: blur(12px);
+                    }
+                }
+                
+                @keyframes modalSlideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(100px) scale(0.9);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                    }
+                }
+
+                @keyframes modalSlideOut {
+                    from {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translateY(-50px) scale(0.95);
+                    }
+                }
+
+                .modal-enter {
+                    animation: modalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+                }
+
+                .modal-exit {
+                    animation: modalSlideOut 0.3s ease-in forwards;
+                }
+            `}</style>
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                 {/* Background Image */}
@@ -161,93 +258,7 @@ const BuyingPage = () => {
                     style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/65 to-blue-900/75"></div>
-                    <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
-                        <Link href='/' >
-                            <Image
-                                src="/white-transparent-bigger.png"
-                                alt="Logo"
-                                width={400}
-                                height={250}
-                                className="w-full max-w-[200px] object-contain"
-                            />
-                        </Link>
-
-                        <div className="space-x-6 flex items-center">
-                            {navItems.map(({ label, href }) => (
-                                <Link key={label} href={href} className="group relative">
-                                    <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '16px' }}>
-                                        {label}
-                                    </span>
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                className="font-montserrat font-light border border-white text-white bg-transparent px-7 py-3 text-lg tracking-wider transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    </nav>
-
-                    {/* Mobile Nav - Keep as requested */}
-                    <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
-                        <Image
-                            src="/white-transparent-bigger.png"
-                            alt="Logo"
-                            width={130}
-                            height={70}
-                            className="object-contain"
-                        />
-
-                        <button
-                            className="focus:outline-none z-50"
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        >
-                            {menuOpen ? (
-                                <svg
-                                    className="w-6 h-6 text-white mb-8 mr-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            ) : (
-                                <div className="space-y-1 mr-5">
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                </div>
-                            )}
-                        </button>
-                    </div>
-
-                    {menuOpen && (
-                        <div
-                            className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
-                            style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
-                        >
-                            {navItems.map(({ label, href }) => (
-                                <Link
-                                    key={label}
-                                    href={href}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block text-base uppercase tracking-wider font-light hover:text-gray-300 py-2 transition"
-                                >
-                                    {label}
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                onClick={() => setMenuOpen(false)}
-                                className="item-center mt-1 inline-block font-montserrat border border-white text-white bg-transparent px-12 py-2 text-base tracking-wider transition-all duration-300 hover:bg-white hover:text-black"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    )}
+                    <Navigation />
                 </div>
                 {/* Floating Elements */}
                 <div className="absolute inset-0 opacity-10">
@@ -316,20 +327,239 @@ const BuyingPage = () => {
                             <button onClick={handleScroll} className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-4 group">
                                 <span className="text-lg uppercase tracking-wider">Mortgage Calculator</span>
                             </button>
-                            <Link href="/contact" >
-                                <button className="bg-blue-600 text-white px-8 py-4 font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-4 group">
-                                    <span className="text-lg uppercase tracking-wider">Start Your Search</span>
-                                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                            </Link>
+                            <button
+                                onClick={() => setModalOpen(true)}
+                                className="bg-blue-600 text-white px-8 py-4 font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-4 group"
+                            >
+                                <span className="text-lg uppercase tracking-wider">Start Your Search</span>
+                                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
+            {/* Modal */}
+            {modalOpen && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    {/* Backdrop */}
+                    <div
+                        className="absolute inset-0 bg-slate-900/90 backdrop-blur-md transition-opacity duration-300"
+                        onClick={() => setModalOpen(false)}
+                        style={{
+                            animation: 'backdropFadeIn 0.5s ease-out forwards'
+                        }}
+                    />
+
+                    {/* Modal Content */}
+                    <div
+                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white/95 backdrop-blur-xl border border-gray-200/20 shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+                        style={{
+                            animation: 'modalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+                        }}
+                    >
+                        {/* Modal Header */}
+                        <div className="relative border-b border-gray-200/20 p-8 pb-6">
+                            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-blue-50/30" />
+                            <div className="relative">
+                                <button
+                                    onClick={() => setModalOpen(false)}
+                                    className="absolute -top-2 -right-2 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                                >
+                                    <X className="h-6 w-6" />
+                                </button>
+
+                                <div className="text-center">
+                                    <div className="inline-flex items-center gap-3 bg-blue-50/50 px-6 py-2 border border-blue-200/20 mb-6">
+                                        <Home className="h-5 w-5 text-blue-600" />
+                                        <span className="text-sm font-medium tracking-[0.15em] uppercase text-blue-800">Begin Your Journey</span>
+                                    </div>
+
+                                    <h2 className="text-3xl font-extralight text-slate-800 mb-2">
+                                        Connect With Your
+                                        <span className="block font-light text-blue-600 italic">Expert Realtor</span>
+                                    </h2>
+
+                                    <p className="text-gray-600 font-light">
+                                        Let's find your perfect coastal property together
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Form */}
+                        <div className="p-8">
+                            {!formSubmitted ? (
+                                <form onSubmit={handleFormSubmit} className="space-y-6">
+                                    {/* Personal Information */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <User className="h-4 w-4 text-blue-600" />
+                                                Full Name *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleFormChange}
+                                                required
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                                placeholder="Enter your full name"
+                                            />
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <Mail className="h-4 w-4 text-blue-600" />
+                                                Email Address *
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleFormChange}
+                                                required
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                                placeholder="your.email@example.com"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Contact & Budget */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <Phone className="h-4 w-4 text-blue-600" />
+                                                Phone Number
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleFormChange}
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                                placeholder="(555) 123-4567"
+                                            />
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <DollarSign className="h-4 w-4 text-blue-600" />
+                                                Budget Range
+                                            </label>
+                                            <select
+                                                name="budget"
+                                                value={formData.budget}
+                                                onChange={handleFormChange}
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                            >
+                                                <option value="">Select budget range</option>
+                                                <option value="under-500k">Under $500K</option>
+                                                <option value="500k-1m">$500K - $1M</option>
+                                                <option value="1m-2m">$1M - $2M</option>
+                                                <option value="2m-5m">$2M - $5M</option>
+                                                <option value="5m-plus">$5M+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    {/* Timeline & Preferences */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <Clock className="h-4 w-4 text-blue-600" />
+                                                Timeline
+                                            </label>
+                                            <select
+                                                name="timeline"
+                                                value={formData.timeline}
+                                                onChange={handleFormChange}
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                            >
+                                                <option value="">When are you looking to buy?</option>
+                                                <option value="immediate">Ready now</option>
+                                                <option value="1-3months">1-3 months</option>
+                                                <option value="3-6months">3-6 months</option>
+                                                <option value="6-12months">6-12 months</option>
+                                                <option value="exploring">Just exploring</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                                <Heart className="h-4 w-4 text-blue-600" />
+                                                Property Type
+                                            </label>
+                                            <select
+                                                name="preferences"
+                                                value={formData.preferences}
+                                                onChange={handleFormChange}
+                                                className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
+                                            >
+                                                <option value="">Select property type</option>
+                                                <option value="oceanfront">Oceanfront Estate</option>
+                                                <option value="beachfront">Beachfront Home</option>
+                                                <option value="marina">Marina Residence</option>
+                                                <option value="waterfront">Waterfront Condo</option>
+                                                <option value="coastal">Coastal Community</option>
+                                                <option value="luxury">Luxury Property</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    {/* Message */}
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-medium text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                                            <MessageSquare className="h-4 w-4 text-blue-600" />
+                                            Additional Details
+                                        </label>
+                                        <textarea
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleFormChange}
+                                            rows={4}
+                                            className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800 resize-none"
+                                            placeholder="Tell us about your dream home, preferred locations, must-have features, or any questions you have..."
+                                        />
+                                    </div>
+
+                                    {/* Submit Button */}
+                                    <div className="pt-4">
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-blue-600 text-white px-8 py-4 font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-4 group shadow-xl hover:shadow-2xl"
+                                        >
+                                            <span className="text-lg uppercase tracking-wider">Connect With Expert</span>
+                                            <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                        </button>
+                                    </div>
+                                </form>
+                            ) : (
+                                <div className="text-center py-12">
+                                    <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 mb-6 mx-auto">
+                                        <CheckCircle className="h-8 w-8 text-green-600" />
+                                    </div>
+                                    <h3 className="text-2xl font-light text-slate-800 mb-4">
+                                        Message Sent Successfully!
+                                    </h3>
+                                    <p className="text-gray-600 font-light mb-8">
+                                        Thank you for reaching out. Our expert realtor will contact you within 24 hours to discuss your coastal property needs.
+                                    </p>
+                                    <div className="inline-flex items-center gap-2 text-blue-600 font-medium">
+                                        <Clock className="h-4 w-4" />
+                                        <span className="text-sm uppercase tracking-wider">Response Expected Within 24 Hours</span>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Buyer's Guide Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-6">
+            <section className="py-20 bg-gray-50"  >
+                <div className="max-w-7xl mx-auto px-6" id="buyers-guide" >
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-3 bg-blue-100 px-6 py-3 mb-6">
                             <Users className="h-5 w-5 text-blue-600" />
@@ -443,7 +673,7 @@ const BuyingPage = () => {
                                 </div>
                             </div>
 
-                            <button className="w-full bg-slate-900 text-white py-4 px-6 font-medium hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-3 group mt-8">
+                            <button onClick={() => setModalOpen(true)} className="w-full bg-slate-900 text-white py-4 px-6 font-medium hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-3 group mt-8">
                                 <span className="uppercase tracking-wider">Schedule Consultation</span>
                                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </button>
@@ -453,8 +683,8 @@ const BuyingPage = () => {
             </section>
 
             {/* Mortgage Calculator Section */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
+            <section className="py-20 bg-white" >
+                <div className="max-w-7xl mx-auto px-6" id="mortgage-calculator" >
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-3 bg-green-100 px-6 py-3 mb-6" id='mort-calc' >
                             <Calculator className="h-5 w-5 text-green-600" />

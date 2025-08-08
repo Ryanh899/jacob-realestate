@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Footer from '../footer';
+import Navigation from '../navbar';
 
 export default function About() {
     const pathname = usePathname();
@@ -39,92 +40,8 @@ export default function About() {
                 >
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/20 z-10" />
-                    <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
-                        <Link href='/' >
-                            <Image
-                                src="/white-transparent-bigger.png"
-                                alt="Logo"
-                                width={400}
-                                height={250}
-                                className="w-full max-w-[200px] object-contain"
-                            />
-                        </Link>
-                        <div className="space-x-6 flex items-center">
-                            {navItems.map(({ label, href }) => (
-                                <Link key={label} href={href} className="group relative">
-                                    <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '14px' }}>
-                                        {label}
-                                    </span>
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                className="font-montserrat font-light border border-white text-white bg-transparent px-7 py-3 text-md tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    </nav>
 
-                    <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
-                        <Image
-                            src="/white-transparent-bigger.png"
-                            alt="Logo"
-                            width={130}
-                            height={70}
-                            className="object-contain"
-                        />
-                        {/* Toggle Button */}
-                        <button
-                            className="focus:outline-none z-50"
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        >
-                            {menuOpen ? (
-                                // Close icon (X)
-                                <svg
-                                    className="w-6 h-6 text-white mb-8 mr-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            ) : (
-                                // Hamburger icon
-                                <div className="space-y-1 mr-5">
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                </div>
-                            )}
-                        </button>
-                    </div>
-                    {menuOpen && (
-                        <div
-                            className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white rounded-xl py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
-                            style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
-                        >
-                            {navItems.map(({ label, href }) => (
-                                <Link
-                                    key={label}
-                                    href={href}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block text-base uppercase tracking-wider font-light hover:text-gray-300 py-2 transition"
-                                >
-                                    {label}
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                onClick={() => setMenuOpen(false)}
-                                className="item-center mt-1 inline-block font-montserrat border border-white text-white bg-transparent px-12 py-2 text-base tracking-wider transition-all duration-300 hover:bg-white hover:text-black"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    )}
+                    <Navigation />
 
                     {/* Animated Title and Subtitle */}
                     <motion.div

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ChevronRight, Home, TrendingUp, Camera, Users, Award, Clock, CheckCircle, Star, ArrowRight, Waves, MapPin, Eye } from 'lucide-react';
 import Footer from '../footer';
 import ScrollToValuation from '../scrollButton2';
+import Navigation from '../navbar';
 
 export default function SellHomePage() {
     const [formData, setFormData] = useState({
@@ -29,7 +30,6 @@ export default function SellHomePage() {
     ];
 
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleInputChange = (e) => {
         setFormData({
@@ -82,7 +82,7 @@ export default function SellHomePage() {
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="property-valuation" >
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -91,91 +91,7 @@ export default function SellHomePage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-blue-900/70"></div>
 
                     {/* Navigation - Keep as requested */}
-                    <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
-                        <Image
-                            src="/white-transparent-bigger.png"
-                            alt="Logo"
-                            width={400}
-                            height={250}
-                            className="w-full max-w-[200px] object-contain"
-                        />
-
-                        <div className="space-x-6 flex items-center">
-                            {navItems.map(({ label, href }) => (
-                                <Link key={label} href={href} className="group relative">
-                                    <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '16px' }}>
-                                        {label}
-                                    </span>
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                className="font-montserrat font-light border border-white text-white bg-transparent px-7 py-3 text-lg tracking-wider transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    </nav>
-
-                    {/* Mobile Nav - Keep as requested */}
-                    <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
-                        <Image
-                            src="/white-transparent-bigger.png"
-                            alt="Logo"
-                            width={130}
-                            height={70}
-                            className="object-contain"
-                        />
-
-                        <button
-                            className="focus:outline-none z-50"
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        >
-                            {menuOpen ? (
-                                <svg
-                                    className="w-6 h-6 text-white mb-8 mr-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            ) : (
-                                <div className="space-y-1 mr-5">
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                    <span className="block w-6 h-0.5 bg-white" />
-                                </div>
-                            )}
-                        </button>
-                    </div>
-
-                    {menuOpen && (
-                        <div
-                            className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
-                            style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
-                        >
-                            {navItems.map(({ label, href }) => (
-                                <Link
-                                    key={label}
-                                    href={href}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block text-base uppercase tracking-wider font-light hover:text-gray-300 py-2 transition"
-                                >
-                                    {label}
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                onClick={() => setMenuOpen(false)}
-                                className="item-center mt-1 inline-block font-montserrat border border-white text-white bg-transparent px-12 py-2 text-base tracking-wider transition-all duration-300 hover:bg-white hover:text-black"
-                            >
-                                Contact
-                            </Link>
-                        </div>
-                    )}
+                    <Navigation  />
                 </div>
 
                 {/* Floating Ocean Elements */}
@@ -602,7 +518,7 @@ export default function SellHomePage() {
             </section>
 
             {/* Properties Showcase */}
-            <section className="py-32 bg-slate-900">
+            <section className="py-32 bg-slate-900" id="past-successes" >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-20 text-white">
                         <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-6">
