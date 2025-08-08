@@ -220,7 +220,7 @@ export default function SellHomePage() {
                             <div className="w-24 h-px bg-gradient-to-r from-blue-100 to-transparent mb-8"></div>
 
                             <p className="text-xl text-gray-200 leading-relaxed mb-12 font-light max-w-lg">
-                                Where oceanfront elegance meets sophisticated market strategy. Discover your coastal property's true market potential through precision analysis and expert positioning.
+                                Where oceanfront elegance meets sophisticated market strategy. Discover your coastal property&apos;s true market potential through precision analysis and expert positioning.
                             </p>
 
                             {/* Sharp Stats */}
@@ -699,7 +699,7 @@ export default function SellHomePage() {
                     <div className="w-24 h-px bg-blue-400 mx-auto mb-12"></div>
 
                     <p className="text-xl font-light text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed">
-                        Transform your oceanfront property into a strategic asset. Experience the precision of coastal luxury real estate mastery with Jacob's exclusive market approach.
+                        Transform your oceanfront property into a strategic asset. Experience the precision of coastal luxury real estate mastery with Jacob&apos;s exclusive market approach.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-8 justify-center">

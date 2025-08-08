@@ -331,7 +331,7 @@ const BuyingPage = () => {
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-3 bg-blue-100 px-6 py-3 mb-6">
                             <Users className="h-5 w-5 text-blue-600" />
-                            <span className="text-sm font-medium tracking-[0.15em] uppercase text-blue-900">Buyer's Guide</span>
+                            <span className="text-sm font-medium tracking-[0.15em] uppercase text-blue-900">Buyer&apos;s Guide</span>
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-6">
                             YOUR PATH TO
