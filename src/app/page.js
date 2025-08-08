@@ -142,12 +142,12 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
+                <footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
                     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700 pb-10">
                         {/* Left Column - Brand */}
                         <div>
                             <h2 className="text-xl font-semibold tracking-widest mb-4">
-                                YOUR NAME <span className="font-light">REAL ESTATE GROUP</span>
+                                JACOB HAZZARD <span className="font-extralight">REAL ESTATE</span>
                             </h2>
                             <p className="text-sm text-gray-400">
                                 Delivering excellence in every transaction, from first-time buyers to luxury estates.
@@ -177,31 +177,30 @@ export default function Home() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
                                     </svg>
-                                    840 Newport Center Drive, Suite 100 <br /> Newport Beach, CA 92660
+                                    222 Avenida Del Mar, <br />San Clemente, CA 92672
                                 </li>
                             </ul>
                         </div>
 
                         {/* Right Column - Branding */}
                         <div className="flex flex-col items-start md:items-end">
-                            <Image src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <Image src="/coldwell-banker-logo.svg" width={60} height={60} alt="Coldwell Banker Realty" className="h-12 mb-4" />
                             <p className="text-xs text-gray-400">
-                                Your Name | CA DRE# 01346878 <br />
-                                Coldwell Banker Realty | CA DRE# 00616212
+                                Jacob Hazzard | CA DRE# 02222037 <br />
+                                Luxre Realty | CA DRE# 01897290
                             </p>
                         </div>
                     </div>
 
                     {/* Bottom Bar */}
                     <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
-                        <p>© {new Date().getFullYear()} Your Name Real Estate Group. All rights reserved.</p>
+                        <p>© {new Date().getFullYear()} Jacob Hazzard Real Estate Group. All rights reserved.</p>
                         <div className="flex gap-5 mt-3 md:mt-0">
                             <a href="#" className="hover:text-white transition">Privacy Policy</a>
                             <a href="#" className="hover:text-white transition">Terms of Use</a>
                         </div>
                     </div>
                 </footer>
-
       </main>
     </>
   );

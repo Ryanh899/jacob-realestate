@@ -2,17 +2,28 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Image from 'next/image';
-import Link from 'next/link';
 
 config.autoAddCss = false;
 
 export default function ContactPage() {
+    const pathname = usePathname();
+    const [menuOpen, setMenuOpen] = useState(false);
     const [status, setStatus] = useState('idle');
+
+    const navItems = [
+        { label: 'About', href: '/about' },
+        { label: 'Sell', href: '/sell' },
+        { label: 'Buy', href: '/buy' },
+        { label: 'Testimonials', href: '/testimonials' },
+    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,112 +49,362 @@ export default function ContactPage() {
     return (
         <>
             <Head>
-                <title>Contact Jacob Hazzard</title>
+                <title>Contact Jacob Hazzard | San Clemente Real Estate</title>
+                <meta
+                    name="description"
+                    content="Get in touch with Jacob Hazzard for all your San Clemente real estate needs. Schedule a consultation today."
+                />
             </Head>
-
-            {/* Navbar */}
-            <nav className="bg-white shadow-sm py-4 text-sm uppercase tracking-wide text-center space-x-6 sticky top-0 z-50">
-                <Link href="/" className="hover:text-gray-400 hover:underline text-gray-600 f2">Home</Link>
-                <Link href="/listings" className="hover:text-gray-400 hover:underline text-gray-600 f2">Listings</Link>
-                <Link href="/about" className="hover:text-gray-400 hover:underline text-gray-600 f2">About</Link>
-                <Link href="/testimonials" className="hover:text-gray-400 hover:underline text-gray-600 f2">Testimonials</Link>
-                <Link href="/contact" className="hover:text-gray-400 hover:underline text-gray-600 f2"><u>Contact</u></Link>
-            </nav>
-
-            {/* Hero */}
-            <section className="relative h-[50vh] bg-cover bg-center flex items-center justify-center text-white"
-                style={{ backgroundImage: "url('/cordoba7.jpeg')" }}>
-                <div className="absolute inset-0 bg-black/40 z-0" />
-                <div className="relative z-10 text-center">
-                    <h1 className="text-5xl font-bold tracking-wide" style={{ fontFamily: 'Playfair Display, serif' }}>Let’s Connect</h1>
-                    <p className="mt-2 text-lg font-light text-gray-200">Reach out for showings, listings, or renovation consulting.</p>
-                </div>
-            </section>
-
-            {/* Direct Contact */}
-            <section className="bg-white py-16 px-6 text-center">
-                <h2 className="text-3xl font-semibold mb-6 f1">Direct Contact</h2>
-                <div className="space-y-3 text-gray-700 f2">
-                    <p>✉️ Email: <Link href="mailto:jacob.hazzard@cbrealty.com" className="text-blue-600 hover:underline">jacob.hazzard@cbrealty.com</Link></p>
-                    <p>📞 Phone: <Link href="tel:+9492919395" className="text-blue-600 hover:underline">(949) 291-9395</Link></p>
-                    <div className="flex justify-center space-x-6 mt-4 text-2xl text-gray-600">
-                        <Link href="https://www.instagram.com/jacobhazzardrealestate/" className="hover:text-black" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faInstagram} />
-                            <span className="sr-only">Instagram</span>
+            <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+                {/* Hero Section */}
+                <section
+                    className="relative min-h-screen h-[135vh] md:h-[100vh] bg-cover bg-center flex flex-col justify-start px-0"
+                    style={{ backgroundImage: "url('/cordoba7.jpeg')" }}
+                    key={`contact-hero-${pathname}`}
+                >
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/20 z-10" />
+                    
+                    {/* Desktop Navigation */}
+                    <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
+                        <Link href='/' >
+                            <Image
+                                src="/white-transparent-bigger.png"
+                                alt="Logo"
+                                width={400}
+                                height={250}
+                                className="w-full max-w-[200px] object-contain"
+                            />
                         </Link>
-                        <Link href="https://www.linkedin.com/in/jacob-hazzard-ocrealtor" className="hover:text-black" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faLinkedin} />
-                            <span className="sr-only">LinkedIn</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Form */}
-            <section className="bg-[#f9f7f4] py-20 px-6">
-                <div className="max-w-3xl mx-auto">
-                    {status === 'success' ? (
-                        <div className="text-center bg-white p-10 rounded-xl shadow">
-                            <h3 className="text-2xl font-semibold mb-4 text-black-700 f1">Message Sent!</h3>
-                            <p className="text-lg text-gray-700 f2 mb-6">Thank you for reaching out. Jacob will be in touch soon.</p>
-                            <Link href="/">
-                                <button className="bg-[#3b5d7d] text-white px-6 py-3 rounded hover:bg-[#2d4a65] transition">Return to Homepage</button>
+                        <div className="space-x-6 flex items-center">
+                            {navItems.map(({ label, href }) => (
+                                <Link key={label} href={href} className="group relative">
+                                    <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '14px' }}>
+                                        {label}
+                                    </span>
+                                </Link>
+                            ))}
+                            <Link
+                                href="/contact"
+                                className="font-montserrat font-light border-2 border-white text-white bg-transparent px-7 py-3 text-md tracking-wider rounded-none transition-all duration-300 ease-in-out"
+                            >
+                                Contact
                             </Link>
                         </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="bg-white p-10 rounded-2xl shadow-lg space-y-6">
-                            <h2 className="text-3xl font-semibold text-center mb-8 f1">Send a Message</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <input type="text" name="name" placeholder="Your Full Name" required className="w-full px-4 py-3 border border-gray-300 rounded" />
-                                <input type="email" name="email" placeholder="Your Email Address" required className="w-full px-4 py-3 border border-gray-300 rounded" />
+                    </nav>
+
+                    {/* Mobile Navigation */}
+                    <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
+                        <Image
+                            src="/white-transparent-bigger.png"
+                            alt="Logo"
+                            width={130}
+                            height={70}
+                            className="object-contain"
+                        />
+                        <button
+                            className="focus:outline-none z-50"
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            aria-label={menuOpen ? "Close menu" : "Open menu"}
+                        >
+                            {menuOpen ? (
+                                <svg
+                                    className="w-6 h-6 text-white mb-8 mr-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            ) : (
+                                <div className="space-y-1 mr-5">
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                    <span className="block w-6 h-0.5 bg-white" />
+                                </div>
+                            )}
+                        </button>
+                    </div>
+                    
+                    {menuOpen && (
+                        <div
+                            className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white rounded-xl py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
+                            style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
+                        >
+                            {navItems.map(({ label, href }) => (
+                                <Link
+                                    key={label}
+                                    href={href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block text-base uppercase tracking-wider font-light hover:text-gray-300 py-2 transition"
+                                >
+                                    {label}
+                                </Link>
+                            ))}
+                            <Link
+                                href="/contact"
+                                onClick={() => setMenuOpen(false)}
+                                className="item-center mt-1 inline-block font-montserrat border border-white text-white bg-transparent px-12 py-2 text-base tracking-wider transition-all duration-300 hover:bg-white hover:text-black"
+                            >
+                                Contact
+                            </Link>
+                        </div>
+                    )}
+
+                    {/* Hero Content Container */}
+                    <div className="relative z-20 flex flex-col justify-between h-full pt-32 pb-20">
+                        {/* Hero Title */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-white text-center max-w-4xl mx-auto px-6 pt-15 md:pt-50 md:mb-0"
+                        >
+                            <h1 className="text-5xl md:text-6xl font-bold f1 mb-4">
+                                Let&apos;s Connect
+                            </h1>
+                            <p className="text-lg md:text-2xl font-light f2 text-white/90 max-w-2xl mx-auto mb-12">
+                                Ready to make your next move? Reach out for consultations, property showings, or renovation strategies.
+                            </p>
+                            
+                            {/* CTA Button to Form */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="mb-16"
+                            >
+                                <button
+                                    onClick={() => document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })}
+                                    className="inline-flex items-center gap-3 text-white border-2 border-white px-12 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300 animate-pulse"
+                                >
+                                    Send Me a Message →
+                                </button>
+                                <p className="text-sm f2 text-white/70 mt-3 uppercase tracking-widest">
+                                    Fill out the form below
+                                </p>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Contact Cards */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl w-full mx-auto px-6"
+                        >
+                            {/* Phone Card */}
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-2 9m13-9l2 9m-5-6h.01" />
+                                </svg>
+                                <h3 className="text-xl font-semibold f1 mb-2">Call Direct</h3>
+                                <Link href="tel:+9492919395" className="text-lg f2 hover:text-white/80 transition">
+                                    (949) 291-9395
+                                </Link>
+                                <p className="text-sm f2 text-white/60 mt-2">Available 7 days a week</p>
                             </div>
 
-                            <input type="tel" name="phone" placeholder="Phone Number" className="w-full px-4 py-3 border border-gray-300 rounded" />
+                            {/* Email Card */}
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 12H8m8-4H8m8 8H8m13 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14z" />
+                                </svg>
+                                <h3 className="text-xl font-semibold f1 mb-2">Send Email</h3>
+                                <Link href="mailto:jacob.hazzard@cbrealty.com" className="text-lg f2 hover:text-white/80 transition break-all">
+                                    jacob.hazzard@cbrealty.com
+                                </Link>
+                                <p className="text-sm f2 text-white/60 mt-2">Quick response guaranteed</p>
+                            </div>
 
-                            <input type="text" name="address" placeholder="Property Address (if applicable)" className="w-full px-4 py-3 border border-gray-300 rounded" />
+                            {/* Social Card */}
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
+                                <div className="flex justify-center space-x-4 mb-4">
+                                    <Link href="https://www.instagram.com/jacobhazzardrealestate/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white/80 transition">
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/jacob-hazzard-ocrealtor" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white/80 transition">
+                                        <FontAwesomeIcon icon={faLinkedin} />
+                                    </Link>
+                                </div>
+                                <h3 className="text-xl font-semibold f1 mb-2">Follow Along</h3>
+                                <p className="text-lg f2">Stay updated with latest listings</p>
+                                <p className="text-sm f2 text-white/60 mt-2">Market insights & tours</p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
 
-                            <select
-                                name="category"
-                                required
-                                defaultValue=""
-                                className="w-full px-4 py-3 border border-gray-300 rounded bg-white text-gray-700"
+                {/* Contact Form Section */}
+                <section id="contact-form" className="relative bg-[#2e2b28] px-6 py-24 text-white border-t-4 border-white">
+                    <div className="max-w-4xl mx-auto">
+                        {status === 'success' ? (
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="text-center bg-[#242220] p-16 border border-gray-700"
                             >
-                                <option value="" disabled>Reason for Contact</option>
-                                <option value="buying">Find a Home</option>
-                                <option value="selling">Looking to Sell</option>
-                                <option value="renovate">Renovate to Sell</option>
-                                <option value="valuation">Home Valuation</option>
-                                <option value="investment">Investment Opportunities</option>
-                                <option value="general">General Inquiry</option>
-                            </select>
+                                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-3xl font-semibold mb-4 f1">Message Sent Successfully</h3>
+                                <p className="text-lg text-gray-300 f2 mb-8 max-w-2xl mx-auto">
+                                    Thank you for reaching out. Jacob will review your message and get back to you within 24 hours.
+                                </p>
+                                <Link href="/" className="inline-flex items-center gap-3 text-white border border-white px-10 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300">
+                                    Return to Homepage →
+                                </Link>
+                            </motion.div>
+                        ) : (
+                            <>
+                                <div className="text-center mb-16">
+                                    <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                        </svg>
+                                    </div>
+                                    <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
+                                        Send a Detailed Message
+                                    </h2>
+                                    <p className="text-lg md:text-xl text-gray-300 font-light f2 max-w-2xl mx-auto">
+                                        Share your real estate goals and Jacob will craft a personalized strategy for your success. All inquiries receive a response within 24 hours.
+                                    </p>
+                                </div>
 
-                            <textarea
-                                name="message"
-                                rows={5}
-                                placeholder="Write your message here..."
-                                required
-                                className="w-full px-4 py-3 border border-gray-300 rounded"
-                            ></textarea>
+                                <motion.form 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6 }}
+                                    onSubmit={handleSubmit} 
+                                    className="bg-[#242220] p-12 border border-gray-700 space-y-8 shadow-2xl"
+                                >
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Full Name *</label>
+                                            <input 
+                                                type="text" 
+                                                name="name" 
+                                                required 
+                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
+                                                placeholder="Enter your full name"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Email Address *</label>
+                                            <input 
+                                                type="email" 
+                                                name="email" 
+                                                required 
+                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
+                                                placeholder="Enter your email address"
+                                            />
+                                        </div>
+                                    </div>
 
-                            {status === 'error' && (
-                                <p className="text-red-500 f2">Something went wrong. Please try again later.</p>
-                            )}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Phone Number</label>
+                                            <input 
+                                                type="tel" 
+                                                name="phone" 
+                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
+                                                placeholder="Enter your phone number"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Property Address</label>
+                                            <input 
+                                                type="text" 
+                                                name="address" 
+                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
+                                                placeholder="Property address (if applicable)"
+                                            />
+                                        </div>
+                                    </div>
 
-                            <button type="submit" className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition">
-                                Send Message
-                            </button>
-                        </form>
-                    )}
-                </div>
-            </section>
+                                    <div>
+                                        <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Reason for Contact *</label>
+                                        <select
+                                            name="category"
+                                            required
+                                            defaultValue=""
+                                            className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white focus:border-white focus:outline-none transition-colors f2 text-lg"
+                                        >
+                                            <option value="" disabled className="bg-[#242220] text-gray-400">Select a reason</option>
+                                            <option value="buying" className="bg-[#242220] text-white">Find a Home</option>
+                                            <option value="selling" className="bg-[#242220] text-white">Looking to Sell</option>
+                                            <option value="renovate" className="bg-[#242220] text-white">Renovate to Sell</option>
+                                            <option value="valuation" className="bg-[#242220] text-white">Home Valuation</option>
+                                            <option value="investment" className="bg-[#242220] text-white">Investment Opportunities</option>
+                                            <option value="general" className="bg-[#242220] text-white">General Inquiry</option>
+                                        </select>
+                                    </div>
 
-            {/* Footer */}
-<footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
+                                    <div>
+                                        <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Message *</label>
+                                        <textarea
+                                            name="message"
+                                            rows={6}
+                                            required
+                                            className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors resize-none f2 text-lg"
+                                            placeholder="Tell Jacob about your real estate goals..."
+                                        ></textarea>
+                                    </div>
+
+                                    {status === 'error' && (
+                                        <div className="bg-red-500/10 border border-red-500/30 p-4 rounded">
+                                            <p className="text-red-400 f2">Something went wrong. Please try again or contact Jacob directly.</p>
+                                        </div>
+                                    )}
+
+                                    <div className="text-center pt-8">
+                                        <button 
+                                            type="submit" 
+                                            disabled={status === 'submitting'}
+                                            className="inline-flex items-center gap-3 text-white border border-white px-12 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        >
+                                            {status === 'submitting' ? 'Sending...' : 'Send Message →'}
+                                        </button>
+                                    </div>
+                                </motion.form >
+                            </>
+                        )}
+                    </div>
+                </section>
+
+                {/* Location Section */}
+                <section className="relative bg-[#242220] px-6 py-24 text-white">
+                    <div className="max-w-6xl mx-auto text-center">
+                        <p className="uppercase text-sm tracking-widest text-gray-400 mb-3 f2">
+                            Visit Our Office
+                        </p>
+                        <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
+                            San Clemente Location
+                        </h2>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-lg f2 text-gray-300 mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
+                            </svg>
+                            <span>222 Avenida Del Mar, San Clemente, CA 92672</span>
+                        </div>
+                        <p className="text-gray-400 f2 max-w-2xl mx-auto">
+                            Located in the heart of San Clemente, Jacob&apos;s office provides easy access for clients throughout Orange County&apos;s coastal communities.
+                        </p>
+                    </div>
+                </section>
+
+                {/* Footer */}
+                <footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
                     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700 pb-10">
                         {/* Left Column - Brand */}
                         <div>
                             <h2 className="text-xl font-semibold tracking-widest mb-4">
-                                YOUR NAME <span className="font-light">REAL ESTATE GROUP</span>
+                                JACOB HAZZARD <span className="font-extralight">REAL ESTATE</span>
                             </h2>
                             <p className="text-sm text-gray-400">
                                 Delivering excellence in every transaction, from first-time buyers to luxury estates.
@@ -160,43 +421,44 @@ export default function ContactPage() {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 12H8m8-4H8m8 8H8m13 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14z" />
                                     </svg>
-                                    <a href="mailto:info@yourgroup.com" className="hover:text-white transition">info@yourgroup.com</a>
+                                    <a href="mailto:jacob.hazzard@cbrealty.com" className="hover:text-white transition">jacob.hazzard@cbrealty.com</a>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-2 9m13-9l2 9m-5-6h.01" />
                                     </svg>
-                                    (949) 478-2295
+                                    (949) 291-9395
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
                                     </svg>
-                                    840 Newport Center Drive, Suite 100 <br /> Newport Beach, CA 92660
+                                    222 Avenida Del Mar, <br />San Clemente, CA 92672
                                 </li>
                             </ul>
                         </div>
 
                         {/* Right Column - Branding */}
                         <div className="flex flex-col items-start md:items-end">
-                            <Image src="/coldwell-banker-logo.svg" alt="Coldwell Banker Realty" className="h-12 mb-4" />
+                            <Image src="/coldwell-banker-logo.svg" width={60} height={60} alt="Coldwell Banker Realty" className="h-12 mb-4" />
                             <p className="text-xs text-gray-400">
-                                Your Name | CA DRE# 01346878 <br />
-                                Coldwell Banker Realty | CA DRE# 00616212
+                                Jacob Hazzard | CA DRE# 02222037 <br />
+                                Luxre Realty | CA DRE# 01897290
                             </p>
                         </div>
                     </div>
 
                     {/* Bottom Bar */}
                     <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
-                        <p>© {new Date().getFullYear()} Your Name Real Estate Group. All rights reserved.</p>
+                        <p>© {new Date().getFullYear()} Jacob Hazzard Real Estate Group. All rights reserved.</p>
                         <div className="flex gap-5 mt-3 md:mt-0">
                             <a href="#" className="hover:text-white transition">Privacy Policy</a>
                             <a href="#" className="hover:text-white transition">Terms of Use</a>
                         </div>
                     </div>
                 </footer>
+            </main>
         </>
     );
 }
