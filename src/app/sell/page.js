@@ -79,6 +79,17 @@ export default function SellHomePage() {
         }
     };
 
+    useEffect(() => {
+        const hash = sessionStorage.getItem('scrollTarget');
+        if (hash) {
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            sessionStorage.removeItem('scrollTarget'); // prevent repeat scrolling
+        }
+    }, []);
+
     return (
         <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
@@ -91,7 +102,7 @@ export default function SellHomePage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-blue-900/70"></div>
 
                     {/* Navigation - Keep as requested */}
-                    <Navigation  />
+                    <Navigation />
                 </div>
 
                 {/* Floating Ocean Elements */}
@@ -334,13 +345,18 @@ export default function SellHomePage() {
                                                     onChange={handleInputChange}
                                                     className="w-full px-6 py-4 border-b-2 border-gray-200 focus:border-blue-500 transition-all font-light bg-transparent focus:outline-none"
                                                 >
-                                                    <option value="">Select type</option>
-                                                    <option value="single-family">Single Family Home</option>
-                                                    <option value="condominium">Condominium</option>
-                                                    <option value="townhome">Townhome</option>
-                                                    <option value="luxury-home">Luxury Home</option>
-                                                    <option value="oceanfront-estate">Oceanfront Estate</option>
-                                                    <option value="investment-property">Investment Property</option>
+                                                    <option value="">Select property type</option>
+                                                    <option value="single-family">Single-Family Home</option>
+                                                    <option value="condo">Condominium</option>
+                                                    <option value="townhouse">Townhouse</option>
+                                                    <option value="multi-family">Multi-Family Property</option>
+                                                    <option value="vacant-land">Vacant Land / Lot</option>
+                                                    <option value="farm-ranch">Farm / Ranch</option>
+                                                    <option value="luxury">Luxury Estate</option>
+                                                    <option value="historic">Historic / Character Home</option>
+                                                    <option value="new-construction">New Construction</option>
+                                                    <option value="investment">Investment Property</option>
+                                                    <option value="other">Other</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -60,8 +60,11 @@ export default function ContactPage() {
             <main className="text-gray-900 bg-[#f1f0eb] font-sans">
                 {/* Hero Section */}
                 <section
-                    className="relative min-h-screen h-[135vh] md:h-[100vh] bg-cover bg-center flex flex-col justify-start px-0"
-                    style={{ backgroundImage: "url('/cordoba7.jpeg')" }}
+                    className="relative min-h-screen h-[135vh] md:h-[100vh] flex flex-col justify-start px-0"
+                    style={{
+                        backgroundImage: "url('/ameno-ariel1.jpeg')",
+                        backgroundPosition: "center top"
+                    }}
                     key={`contact-hero-${pathname}`}
                 >
                     {/* Dark overlay */}
@@ -112,8 +115,8 @@ export default function ContactPage() {
                         >
                             {/* Phone Card */}
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-2 9m13-9l2 9m-5-6h.01" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
                                 <h3 className="text-xl font-semibold f1 mb-2">Call Direct</h3>
                                 <Link href="tel:+9492919395" className="text-lg f2 hover:text-white/80 transition">
@@ -124,8 +127,8 @@ export default function ContactPage() {
 
                             {/* Email Card */}
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 12H8m8-4H8m8 8H8m13 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
                                 <h3 className="text-xl font-semibold f1 mb-2">Send Email</h3>
                                 <Link href="mailto:jacob.hazzard@cbrealty.com" className="text-lg f2 hover:text-white/80 transition break-all">
@@ -137,10 +140,10 @@ export default function ContactPage() {
                             {/* Social Card */}
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3 hidden md:block">
                                 <div className="flex justify-center space-x-4 mb-4">
-                                    <Link href="https://www.instagram.com/jacobhazzardrealestate/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white/80 transition">
+                                    <Link href="https://www.instagram.com/jacobhazzardrealestate/" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-white/80 transition">
                                         <FontAwesomeIcon icon={faInstagram} />
                                     </Link>
-                                    <Link href="https://www.linkedin.com/in/jacob-hazzard-ocrealtor" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white/80 transition">
+                                    <Link href="https://www.linkedin.com/in/jacob-hazzard-ocrealtor" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-white/80 transition">
                                         <FontAwesomeIcon icon={faLinkedin} />
                                     </Link>
                                 </div>

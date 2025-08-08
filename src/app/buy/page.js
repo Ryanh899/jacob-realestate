@@ -37,6 +37,17 @@ const BuyingPage = () => {
         // { label: 'Testimonials', href: '/testimonials' },
     ];
 
+    useEffect(() => {
+        const hash = sessionStorage.getItem('scrollTarget');
+        if (hash) {
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            sessionStorage.removeItem('scrollTarget'); // prevent repeat scrolling
+        }
+    }, []);
+
     const buyersGuideSteps = [
         {
             title: "Pre-Approval Process",
@@ -157,7 +168,7 @@ const BuyingPage = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_KEY', {
+            const response = await fetch('https://formspree.io/f/xnnzoeen', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -498,12 +509,17 @@ const BuyingPage = () => {
                                                 className="w-full px-4 py-3 bg-white/50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none font-light text-gray-800"
                                             >
                                                 <option value="">Select property type</option>
-                                                <option value="oceanfront">Oceanfront Estate</option>
-                                                <option value="beachfront">Beachfront Home</option>
-                                                <option value="marina">Marina Residence</option>
-                                                <option value="waterfront">Waterfront Condo</option>
-                                                <option value="coastal">Coastal Community</option>
-                                                <option value="luxury">Luxury Property</option>
+                                                <option value="single-family">Single-Family Home</option>
+                                                <option value="condo">Condominium</option>
+                                                <option value="townhouse">Townhouse</option>
+                                                <option value="multi-family">Multi-Family Property</option>
+                                                <option value="vacant-land">Vacant Land / Lot</option>
+                                                <option value="farm-ranch">Farm / Ranch</option>
+                                                <option value="luxury">Luxury Estate</option>
+                                                <option value="historic">Historic / Character Home</option>
+                                                <option value="new-construction">New Construction</option>
+                                                <option value="investment">Investment Property</option>
+                                                <option value="other">Other</option>
                                             </select>
                                         </div>
                                     </div>

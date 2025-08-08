@@ -3,10 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+
 
 const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+
+    const router = useRouter();
 
     const navItems = [
         { 
@@ -28,39 +33,60 @@ const Navigation = () => {
         { label: 'About', href: '/about' }
     ];
 
-    const handleSmoothScroll = (href) => {
-        if (href.includes('#')) {
-            const [path, hash] = href.split('#');
+    // const handleSmoothScroll = (href) => {
+    //     if (href.includes('#')) {
+    //         const [path, hash] = href.split('#');
             
-            if (window.location.pathname === path) {
-                // If already on the page, just scroll to the section
-                const element = document.getElementById(hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            } else {
-                // Navigate to the page first
-                window.location.href = path;
+    //         if (window.location.pathname === path) {
+    //             // If already on the page, just scroll to the section
+    //             const element = document.getElementById(hash);
+    //             if (element) {
+    //                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //             }
+    //         } else {
+    //             // Navigate to the page first
+    //             window.location.href = path;
                 
-                // Wait for page to load, then scroll to section
-                setTimeout(() => {
-                    const checkElement = () => {
-                        const element = document.getElementById(hash);
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        } else {
-                            // If element not found, try again after a short delay
-                            setTimeout(checkElement, 100);
-                        }
-                    };
-                    checkElement();
-                }, 500);
+    //             // Wait for page to load, then scroll to section
+    //             setTimeout(() => {
+    //                 const checkElement = () => {
+    //                     const element = document.getElementById(hash);
+    //                     if (element) {
+    //                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //                     } else {
+    //                         // If element not found, try again after a short delay
+    //                         setTimeout(checkElement, 100);
+    //                     }
+    //                 };
+    //                 checkElement();
+    //             }, 500);
+    //         }
+    //     } else {
+    //         // If no hash, just navigate normally
+    //         window.location.href = href;
+    //     }
+    // };
+
+    const handleSmoothScroll = (href) => {
+    if (href.includes('#')) {
+        const [path, hash] = href.split('#');
+
+        if (window.location.pathname === path) {
+            // Already on page — scroll directly
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         } else {
-            // If no hash, just navigate normally
-            window.location.href = href;
+            // Different page — save hash and navigate
+            sessionStorage.setItem('scrollTarget', hash);
+            router.push(path);
         }
-    };
+    } else {
+        router.push(href);
+    }
+};
+
 
     return (
         <div>

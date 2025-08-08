@@ -65,12 +65,16 @@ export default function Home() {
                 Jacob Hazzard combines years of luxury market expertise with the mindset of a builder, renovator, and advocate. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
               </p>
               <div className="flex text-md md:text-xl text-gray-600">
+                <Link href='/buy'>
                 <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
                   Buy with Jacob
                 </button>
+                </Link>
+                <Link href='/sell'>
                 <button href='/sell' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
                   Sell with Jacob
                 </button>
+                </Link>
               </div>
             </div>
           </div>
