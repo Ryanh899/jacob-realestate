@@ -476,7 +476,7 @@ export default function SellHomePage() {
                                 </h3>
                                 <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
                                 <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Professional photography, staging consultation, and targeted digital marketing that showcases your property's unique character and attracts qualified buyers.
+                                    Professional photography, staging consultation, and targeted digital marketing that showcases your property&apos;s unique character and attracts qualified buyers.
                                 </p>
                                 <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
                                     <span className="text-sm font-medium uppercase tracking-wider">View Services</span>
