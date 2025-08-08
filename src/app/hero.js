@@ -62,7 +62,7 @@ function HeroSlideshow() {
                 <div className="space-x-6 flex items-center">
                     {navItems.map(({ label, href }) => (
                         <Link key={label} href={href} className="group relative">
-                            <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '15px' }}>
+                            <span className="relative inline-block after:absolute after:block after:w-0 after:h-[2px] after:bg-white after:left-0 after:-bottom-1 group-hover:after:w-full after:transition-all after:duration-300 f2 font-light py-4" style={{ fontSize: '16px' }}>
                                 {label}
                             </span>
                         </Link>

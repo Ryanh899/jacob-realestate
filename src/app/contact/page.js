@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Footer from '../footer';
 
 config.autoAddCss = false;
 
@@ -64,7 +65,7 @@ export default function ContactPage() {
                 >
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/20 z-10" />
-                    
+
                     {/* Desktop Navigation */}
                     <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
                         <Link href='/' >
@@ -126,7 +127,7 @@ export default function ContactPage() {
                             )}
                         </button>
                     </div>
-                    
+
                     {menuOpen && (
                         <div
                             className="absolute top-[88px] left-45 right-11 z-40 bg-black/70 backdrop-blur-md text-white rounded-xl py-6 px-6 shadow-lg md:hidden animate-slideDown opacity-0 animate-fadeIn"
@@ -167,7 +168,7 @@ export default function ContactPage() {
                             <p className="text-lg md:text-2xl font-light f2 text-white/90 max-w-2xl mx-auto mb-12">
                                 Ready to make your next move? Reach out for consultations, property showings, or renovation strategies.
                             </p>
-                            
+
                             {/* CTA Button to Form */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -181,9 +182,7 @@ export default function ContactPage() {
                                 >
                                     Send Me a Message →
                                 </button>
-                                <p className="text-sm f2 text-white/70 mt-3 uppercase tracking-widest">
-                                    Fill out the form below
-                                </p>
+
                             </motion.div>
                         </motion.div>
 
@@ -219,7 +218,7 @@ export default function ContactPage() {
                             </div>
 
                             {/* Social Card */}
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3">
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 text-center text-white hover:scale-105 transition-transform duration-300 w-full md:w-1/3 hidden md:block">
                                 <div className="flex justify-center space-x-4 mb-4">
                                     <Link href="https://www.instagram.com/jacobhazzardrealestate/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white/80 transition">
                                         <FontAwesomeIcon icon={faInstagram} />
@@ -229,8 +228,16 @@ export default function ContactPage() {
                                     </Link>
                                 </div>
                                 <h3 className="text-xl font-semibold f1 mb-2">Follow Along</h3>
-                                <p className="text-lg f2">Stay updated with latest listings</p>
+                                <p className="text-lg f2">Stay updated with listings</p>
                                 <p className="text-sm f2 text-white/60 mt-2">Market insights & tours</p>
+                            </div>
+                            <div className="flex justify-center space-x-4 mb-4 md:hidden">
+                                <Link href="https://www.instagram.com/jacobhazzardrealestate/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white/100 transition">
+                                    <FontAwesomeIcon icon={faInstagram} />
+                                </Link>
+                                <Link href="https://www.linkedin.com/in/jacob-hazzard-ocrealtor" target="_blank" rel="noopener noreferrer" className="text-2xl text-white/100 transition">
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </Link>
                             </div>
                         </motion.div>
                     </div>
@@ -240,7 +247,7 @@ export default function ContactPage() {
                 <section id="contact-form" className="relative bg-[#2e2b28] px-6 py-24 text-white border-t-4 border-white">
                     <div className="max-w-4xl mx-auto">
                         {status === 'success' ? (
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 className="text-center bg-[#242220] p-16 border border-gray-700"
@@ -261,10 +268,14 @@ export default function ContactPage() {
                         ) : (
                             <>
                                 <div className="text-center mb-16">
-                                    <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                        </svg>
+                                    <div className="w-20 h-20 flex items-center justify-center mx-auto mb-15">
+                                        <Image
+                                            src="/white-transparent-bigger.png"
+                                            alt="Logo"
+                                            width={200}
+                                            height={200}
+                                            className="max-w-[200] max-h-[200] object-contain"
+                                        />
                                     </div>
                                     <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
                                         Send a Detailed Message
@@ -274,31 +285,31 @@ export default function ContactPage() {
                                     </p>
                                 </div>
 
-                                <motion.form 
+                                <motion.form
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
-                                    onSubmit={handleSubmit} 
+                                    onSubmit={handleSubmit}
                                     className="bg-[#242220] p-12 border border-gray-700 space-y-8 shadow-2xl"
                                 >
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
                                             <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Full Name *</label>
-                                            <input 
-                                                type="text" 
-                                                name="name" 
-                                                required 
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                required
                                                 className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
                                                 placeholder="Enter your full name"
                                             />
                                         </div>
                                         <div>
                                             <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Email Address *</label>
-                                            <input 
-                                                type="email" 
-                                                name="email" 
-                                                required 
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                required
                                                 className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
                                                 placeholder="Enter your email address"
                                             />
@@ -308,18 +319,18 @@ export default function ContactPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
                                             <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Phone Number</label>
-                                            <input 
-                                                type="tel" 
-                                                name="phone" 
+                                            <input
+                                                type="tel"
+                                                name="phone"
                                                 className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
                                                 placeholder="Enter your phone number"
                                             />
                                         </div>
                                         <div>
                                             <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Property Address</label>
-                                            <input 
-                                                type="text" 
-                                                name="address" 
+                                            <input
+                                                type="text"
+                                                name="address"
                                                 className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
                                                 placeholder="Property address (if applicable)"
                                             />
@@ -362,8 +373,8 @@ export default function ContactPage() {
                                     )}
 
                                     <div className="text-center pt-8">
-                                        <button 
-                                            type="submit" 
+                                        <button
+                                            type="submit"
                                             disabled={status === 'submitting'}
                                             className="inline-flex items-center gap-3 text-white border border-white px-12 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                         >
@@ -399,65 +410,7 @@ export default function ContactPage() {
                 </section>
 
                 {/* Footer */}
-                <footer className="bg-[#1a1a1a] text-gray-300 py-12 px-6">
-                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700 pb-10">
-                        {/* Left Column - Brand */}
-                        <div>
-                            <h2 className="text-xl font-semibold tracking-widest mb-4">
-                                JACOB HAZZARD <span className="font-extralight">REAL ESTATE</span>
-                            </h2>
-                            <p className="text-sm text-gray-400">
-                                Delivering excellence in every transaction, from first-time buyers to luxury estates.
-                            </p>
-                        </div>
-
-                        {/* Middle Column - Contact Info */}
-                        <div>
-                            <h3 className="uppercase text-sm tracking-widest text-gray-400 mb-4">
-                                Contact Us
-                            </h3>
-                            <ul className="space-y-3">
-                                <li className="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 12H8m8-4H8m8 8H8m13 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14z" />
-                                    </svg>
-                                    <a href="mailto:jacob.hazzard@cbrealty.com" className="hover:text-white transition">jacob.hazzard@cbrealty.com</a>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-2 9m13-9l2 9m-5-6h.01" />
-                                    </svg>
-                                    (949) 291-9395
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
-                                    </svg>
-                                    222 Avenida Del Mar, <br />San Clemente, CA 92672
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Right Column - Branding */}
-                        <div className="flex flex-col items-start md:items-end">
-                            <Image src="/coldwell-banker-logo.svg" width={60} height={60} alt="Coldwell Banker Realty" className="h-12 mb-4" />
-                            <p className="text-xs text-gray-400">
-                                Jacob Hazzard | CA DRE# 02222037 <br />
-                                Luxre Realty | CA DRE# 01897290
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Bottom Bar */}
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
-                        <p>© {new Date().getFullYear()} Jacob Hazzard Real Estate Group. All rights reserved.</p>
-                        <div className="flex gap-5 mt-3 md:mt-0">
-                            <a href="#" className="hover:text-white transition">Privacy Policy</a>
-                            <a href="#" className="hover:text-white transition">Terms of Use</a>
-                        </div>
-                    </div>
-                </footer>
+                <Footer />
             </main>
         </>
     );
