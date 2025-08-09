@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">1. Introduction</h2>
         <p className="text-base text-gray-700">
-          Jacob Hazzard Real Estate respects your privacy and is committed to protecting it. This Privacy Policy explains what information we collect, how we use it, when we share it, and your choices. If you are located in a jurisdiction with additional privacy laws (for example, California's CCPA/CPRA or the EU's GDPR), some sections below describe rights available under those laws. For guidance on what to include in a privacy policy for form collection and website use, see resources from Termly and similar guides. 
+          Jacob Hazzard Real Estate respects your privacy and is committed to protecting it. This Privacy Policy explains what information we collect, how we use it, when we share it, and your choices. If you are located in a jurisdiction with additional privacy laws (for example, California&apos;s CCPA/CPRA or the EU&apos;s GDPR), some sections below describe rights available under those laws. For guidance on what to include in a privacy policy for form collection and website use, see resources from Termly and similar guides. 
         </p>
       </section>
 

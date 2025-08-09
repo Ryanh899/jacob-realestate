@@ -11,7 +11,7 @@ export default function TermsOfUse() {
     <main className="max-w-4xl mx-auto px-6 py-16 text-gray-800 bg-[#f9f7f4]">
       <h1 className="text-3xl md:text-4xl font-heading mb-4">Terms of Use</h1>
       <p className="text-sm text-gray-600 mb-6">
-        Effective date: <strong>[Effective Date]</strong>. Please read these Terms of Use ("Terms") carefully before using the website at <strong>jacobhazzardrealestate.com</strong> (the "Site"). These Terms govern your access to and use of the Site and services provided by <strong>[Business Name / Jacob Hazzard]</strong>.
+        Effective date: <strong>[Effective Date]</strong>. Please read these Terms of Use (&quot;Terms&quot;) carefully before using the website at <strong>jacobhazzardrealestate.com</strong> (the &quot;Site&quot;). These Terms govern your access to and use of the Site and services provided by <strong>[Business Name / Jacob Hazzard]</strong>.
       </p>
 
       <section className="mb-6">
