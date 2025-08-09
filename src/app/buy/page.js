@@ -290,8 +290,8 @@ const BuyingPage = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-                    <div className="text-center text-white max-w-4xl mx-auto">
-                        <div className="mb-8">
+                    <div className="text-center text-white max-w-4xl mx-auto pt-20 md:pt-0">
+                        <div className="mb-8  hidden md:block">
                             <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm px-8 py-4 border border-white/10">
                                 <MapPin className="h-5 w-5 text-blue-400" />
                                 <span className="text-sm font-medium tracking-[0.15em] uppercase">Coastal Property Acquisition</span>
