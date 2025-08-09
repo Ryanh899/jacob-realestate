@@ -313,7 +313,7 @@ export default function ContactPage() {
                         <p className="uppercase text-sm tracking-widest text-gray-400 mb-3 f2">
                             Visit Our Office
                         </p>
-                        <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
+                        <h2 className="text-4xl font-semibold mb-6 f1">
                             San Clemente Location
                         </h2>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-lg f2 text-gray-300 mb-8">
@@ -324,7 +324,7 @@ export default function ContactPage() {
                             <span>222 Avenida Del Mar, San Clemente, CA 92672</span>
                         </div>
                         <p className="text-gray-400 f2 max-w-2xl mx-auto">
-                            Located in the heart of San Clemente, Jacob&apos;s office provides easy access for clients throughout Orange County&apos;s coastal communities.
+                            Located in the heart of San Clemente, our office provides easy access for clients throughout Orange County&apos;s coastal communities.
                         </p>
                     </div>
                 </section>

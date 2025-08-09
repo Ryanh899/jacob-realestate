@@ -7,18 +7,16 @@ import FeaturedListings from './listingSection';
 import Footer from './footer';
 
 export const metadata = {
-  title: "Coastal Luxury Real Estate | Jacob Hazzard",
-  description:
-    "Where oceanfront elegance meets sophisticated market strategy. Discover your property's true potential.",
+  title: "San Clemente Realtor | Jacob Hazzard, Luxre Realty",
+  description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
   openGraph: {
-    title: "Coastal Luxury Real Estate | Jacob Hazzard",
-    description:
-      "Where oceanfront elegance meets sophisticated market strategy. Discover your property's true potential.",
+    title: "San Clemente Realtor | Jacob Hazzard",
+    description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
     url: "https://jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard Real Estate",
     images: [
       {
-        url: "/white-transparent-bigger.png", 
+        url: "/white-transparent-bigger.png",
         width: 1200,
         height: 630,
         alt: "Beautiful coastal home with ocean view",
@@ -30,8 +28,46 @@ export const metadata = {
 };
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Jacob Hazzard",
+    "image": "https://yourwebsite.com/profile.jpg",
+    "url": "https://yourwebsite.com",
+    "telephone": "+1-555-555-5555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Coastal Blvd",
+      "addressLocality": "San Clemente",
+      "addressRegion": "CA",
+      "postalCode": "92672",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Orange County, California"
+      },
+      {
+        "@type": "Place",
+        "name": "San Clemente, California"
+      }
+    ],
+    "servesCuisine": "Real Estate",
+    "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00",
+    "priceRange": "$$$",
+    "description": "Jacob Hazzard is a luxury real estate agent with LUXRE Realty, specializing in buying, selling, renovations, investment properties, and rentals in Orange County, CA."
+  };
   return (
     <>
+      <Head>
+        <title>Jacob Hazzard | Luxury Real Estate in Orange County</title>
+        <meta name="description" content="Work with Jacob Hazzard of LUXRE Realty for luxury real estate in Orange County. Specializing in buying, selling, renovations, and investment opportunities." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </Head>
       <main className="text-gray-800 bg-[#f9f7f4]" >
         {/* Hero Section */}
         <HeroSlideshow />
@@ -66,14 +102,14 @@ export default function Home() {
               </p>
               <div className="flex text-md md:text-xl text-gray-600">
                 <Link href='/buy'>
-                <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
-                  Buy with Jacob
-                </button>
+                  <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                    Buy with Jacob
+                  </button>
                 </Link>
                 <Link href='/sell'>
-                <button href='/sell' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
-                  Sell with Jacob
-                </button>
+                  <button href='/sell' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                    Sell with Jacob
+                  </button>
                 </Link>
               </div>
             </div>

@@ -33,40 +33,6 @@ const Navigation = () => {
         { label: 'About', href: '/about' }
     ];
 
-    // const handleSmoothScroll = (href) => {
-    //     if (href.includes('#')) {
-    //         const [path, hash] = href.split('#');
-            
-    //         if (window.location.pathname === path) {
-    //             // If already on the page, just scroll to the section
-    //             const element = document.getElementById(hash);
-    //             if (element) {
-    //                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    //             }
-    //         } else {
-    //             // Navigate to the page first
-    //             window.location.href = path;
-                
-    //             // Wait for page to load, then scroll to section
-    //             setTimeout(() => {
-    //                 const checkElement = () => {
-    //                     const element = document.getElementById(hash);
-    //                     if (element) {
-    //                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    //                     } else {
-    //                         // If element not found, try again after a short delay
-    //                         setTimeout(checkElement, 100);
-    //                     }
-    //                 };
-    //                 checkElement();
-    //             }, 500);
-    //         }
-    //     } else {
-    //         // If no hash, just navigate normally
-    //         window.location.href = href;
-    //     }
-    // };
-
     const handleSmoothScroll = (href) => {
     if (href.includes('#')) {
         const [path, hash] = href.split('#');
@@ -258,9 +224,9 @@ const Navigation = () => {
                                                 handleSmoothScroll(itemHref);
                                                 setMenuOpen(false);
                                             }}
-                                            className="block text-sm text-gray-300 hover:text-white py-1 transition normal-case font-light tracking-wide"
+                                            className="block text-sm text-gray-300 hover:text-white py-1 transition normal-case font-extralight font-montserrat tracking-wide"
                                         >
-                                            • {itemLabel}
+                                            {itemLabel}
                                         </button>
                                     ))}
                                 </div>

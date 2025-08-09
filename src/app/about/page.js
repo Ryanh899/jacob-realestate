@@ -10,6 +10,13 @@ import { useEffect, useState } from 'react';
 import Footer from '../footer';
 import Navigation from '../navbar';
 
+export const metadata = {
+  title: "About Jacob Hazzard — Luxury Real Estate & Renovations",
+  description: "Learn about Jacob Hazzard, his renovation-driven sales approach, successful Orange County listings, and Luxre Realty background.",
+  openGraph: { url: "https://jacobhazzardrealestate.com/about" }
+};
+
+
 export default function About() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
