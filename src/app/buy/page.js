@@ -967,7 +967,7 @@ const BuyingPage = () => {
 
                         <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-md mx-auto">
                             <Link href="/contact" >
-                                <button className="bg-blue-600 text-white px-8 py-4 font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-3 group flex-1">
+                                <button className="bg-blue-600 text-white px-26.5 md:px-8 py-4 font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-3 group flex-1">
                                     <span className="uppercase tracking-wider">Schedule Tour</span>
                                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
