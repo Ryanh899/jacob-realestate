@@ -187,7 +187,7 @@ const MarketingSection = () => {
                             <h3 className="text-3xl font-light text-gray-900 mb-6">Professional Photography</h3>
                             <div className="w-16 h-px bg-slate-900 mb-8"></div>
                             <p className="text-lg text-gray-600 font-light leading-relaxed mb-12">
-                                Award-winning visual storytelling that captures your property's architectural details
+                                Award-winning visual storytelling that captures your property&apos;s architectural details
                                 and emotional appeal through expert composition and lighting techniques.
                             </p>
 
@@ -207,7 +207,7 @@ const MarketingSection = () => {
                                 <div className="w-12 h-px bg-blue-500 mb-6"></div>
                                 <p className="text-gray-600 font-light leading-relaxed">
                                     Professional photography creates immediate emotional connection with potential buyers,
-                                    showcasing your property's unique character and lifestyle potential.
+                                    showcasing your property&apos;s unique character and lifestyle potential.
                                 </p>
                                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/20"></div>
                                 <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-slate-900/10"></div>
@@ -259,7 +259,7 @@ const MarketingSection = () => {
                         <h3 className="text-3xl font-light text-gray-900 mb-6">Ready to Begin?</h3>
                         <div className="w-16 h-px bg-blue-500 mx-auto mb-8"></div>
                         <p className="text-lg text-gray-600 font-light mb-12 leading-relaxed">
-                            Experience the difference comprehensive marketing makes for your property's success.
+                            Experience the difference comprehensive marketing makes for your property&apos;s success.
                         </p>
                         <Link href="/contact" >
                         <button className="bg-slate-900 text-white py-5 px-8 font-medium hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-4 group shadow-lg transform hover:scale-[1.02] mx-auto">
