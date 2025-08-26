@@ -98,19 +98,19 @@ export default function Home() {
 
               {/* Supporting Body */}
               <p className="text-base text-gray-700 leading-relaxed font-body f2">
-                Jacob Hazzard combines years of luxury market expertise with the mindset of a builder, renovator, and advocate. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
+                Jacob Hazzard combines years of market expertise with the mindset of a builder, renovator, and homeowner. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
               </p>
               <div className="flex text-md md:text-xl text-gray-600">
                 <Link href='/buy'>
-                  <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
-                    Buy with Jacob
+                  <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-28 md:px-32 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
+                    Work with Jacob
                   </button>
                 </Link>
-                <Link href='/sell'>
+                {/* <Link href='/sell'>
                   <button href='/sell' className="font-montserrat font-light border border-black text-black bg-transparent px-7 md:px-8 py-3 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
                     Sell with Jacob
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -159,10 +159,9 @@ export default function Home() {
         <section className="pt-20 pb-12.5 text-center px-4 bg-[#f1ece3] hidden md:block"></section>
         {/* Mission Statement */}
         <section className="pt-20 pb-12.5 text-center px-4 bg-gray-700">
-          <h2 className="text-2xl font-light tracking-widest uppercase mb-6 f1 text-white">A Modern Real Estate Philosophy</h2>
+          <h2 className="text-2xl font-extralight tracking-widest uppercase mb-6 f1 text-white"> <span className='font-normal' >Honest</span> Work. <br/> <span className='font-normal' >Lasting </span>Results</h2>
           <p className="max-w-xl mx-auto text-lg f2 text-white font-light">
-            Jacob&apos;s approach blends design, data, and discipline. Renovate to inspire, market with precision, negotiate with excellence.
-          </p>
+            With experience in renovation, buying, selling, and investments, Jacob delivers real estate with honesty, precision, and a hometown touch.          </p>
           <div className="py-0 flex justify-center items-center ">
             <Image
               src="/white-transparent-bigger.png"

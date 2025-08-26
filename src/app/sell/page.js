@@ -7,6 +7,8 @@ import { ChevronRight, Home, TrendingUp, Camera, Users, Award, Clock, CheckCircl
 import Footer from '../footer';
 import ScrollToValuation from '../scrollButton2';
 import Navigation from '../navbar';
+import MarketingSection from './marketing';
+import SellPastSlide from '../sellpastslideshow';
 
 export default function SellHomePage() {
     const [formData, setFormData] = useState({
@@ -149,36 +151,18 @@ export default function SellHomePage() {
                             <p className="text-xl text-gray-200 leading-relaxed mb-12 font-light max-w-lg">
                                 Where personalized attention meets strategic market expertise. Discover your property&apos;s true potential through comprehensive analysis and proven results.
                             </p>
-
-                            {/* Sharp Stats */}
                             <div className="grid grid-cols-3 gap-8 mb-12">
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">$2.8M</div>
-                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Average Sale</div>
+                                    <div className="text-lg font-medium font-normal text-blue-400 mb-1">Tailored Strategy</div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Custom marketing for every home</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">98%</div>
-                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">List Price</div>
+                                    <div className="text-lg font-medium font-normal text-blue-400 mb-1">Design Expertise</div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Renovations that maximize value</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-3xl font-extralight text-blue-400 mb-1">18</div>
-                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Days Market</div>
-                                </div>
-                            </div>
-
-                            {/* Trust Indicators */}
-                            <div className="flex items-center gap-12 text-gray-300">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-1 h-1 bg-blue-400"></div>
-                                    <span className="text-sm font-light uppercase tracking-wider">Complimentary</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-1 h-1 bg-blue-400"></div>
-                                    <span className="text-sm font-light uppercase tracking-wider">24H Response</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-1 h-1 bg-blue-400"></div>
-                                    <span className="text-sm font-light uppercase tracking-wider">Proven Results</span>
+                                    <div className="text-lg font-medium font-normal text-blue-400 mb-1">Trusted Network</div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Contractors, stagers, and designers</div>
                                 </div>
                             </div>
                         </div>
@@ -396,143 +380,17 @@ export default function SellHomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* Sharp Stats Strip */}
             <section className="py-20 bg-slate-900">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">24hr</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Analysis</div>
-                            <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
-                        </div>
-                        <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">$125M+</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Total Sales</div>
-                            <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
-                        </div>
-                        <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">400+</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Happy Clients</div>
-                            <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
-                        </div>
-                        <div className="text-center group cursor-pointer">
-                            <div className="text-3xl font-extralight text-blue-400 mb-3 group-hover:text-white transition-colors">15yrs</div>
-                            <div className="text-xs uppercase tracking-[0.2em] font-light text-gray-400">Experience</div>
-                            <div className="w-full h-px bg-blue-400/20 mt-4 group-hover:bg-blue-400/60 transition-colors"></div>
+                    <div className="text-center mb-16">
+                        <div className="text-5xl font-extralight text-blue-400 mb-6">24-Hour Professional Valuation</div>
+                        <div className="text-xl text-gray-300 font-light max-w-4xl mx-auto leading-relaxed">
+                            Get an accurate, comprehensive property assessment from licensed real estate professionals—not automated estimates
                         </div>
                     </div>
                 </div>
             </section>
-
-            {/* Excellence Showcase */}
-            <section className="py-32 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-24">
-                        <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-500 font-medium mb-6">
-                            Complete Real Estate Solutions
-                        </div>
-                        <h2 className="text-6xl lg:text-7xl font-extralight text-gray-900 mb-8 leading-tight tracking-tight">
-                            FULL-SERVICE
-                            <span className="block text-blue-600 italic font-light">EXPERTISE</span>
-                        </h2>
-                        <div className="w-24 h-px bg-blue-500 mx-auto mb-8"></div>
-                        <p className="text-xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
-                            From first-time sellers to luxury estates, every property deserves strategic marketing, professional presentation, and dedicated personal service.
-                        </p>
-                    </div>
-
-                    <div className="grid lg:grid-cols-3 gap-16">
-                        {/* Strategy 1 - Market Intelligence */}
-                        <div className="group cursor-pointer">
-                            <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-slate-100 to-blue-100">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Market Analysis"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <TrendingUp className="h-8 w-8 text-white" />
-                                </div>
-                            </div>
-                            <div className="space-y-6">
-                                <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Strategic Market Positioning
-                                </h3>
-                                <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
-                                <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Comprehensive market analysis combining neighborhood trends, buyer demographics, and pricing strategy to position your property for maximum value.
-                                </p>
-                                <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">Learn More</span>
-                                    <ArrowRight className="h-4 w-4" />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Strategy 2 - Professional Presentation */}
-                        <div className="group cursor-pointer">
-                            <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-blue-100 to-indigo-100">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Professional Photography"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <Eye className="h-8 w-8 text-white" />
-                                </div>
-                            </div>
-                            <div className="space-y-6">
-                                <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Premium Property Marketing
-                                </h3>
-                                <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
-                                <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Professional photography, staging consultation, and targeted digital marketing that showcases your property&apos;s unique character and attracts qualified buyers.
-                                </p>
-                                <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">View Services</span>
-                                    <ArrowRight className="h-4 w-4" />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Strategy 3 - Personal Service */}
-                        <div className="group cursor-pointer">
-                            <div className="relative overflow-hidden mb-10 aspect-[3/4] bg-gradient-to-br from-indigo-100 to-purple-100">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Personal Service"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <Users className="h-8 w-8 text-white" />
-                                </div>
-                            </div>
-                            <div className="space-y-6">
-                                <h3 className="text-3xl font-light text-gray-900 group-hover:text-blue-600 transition-colors">
-                                    Dedicated Personal Service
-                                </h3>
-                                <div className="w-12 h-px bg-blue-500 group-hover:w-20 transition-all duration-300"></div>
-                                <p className="text-gray-600 font-light leading-relaxed text-lg">
-                                    Direct access to Jacob throughout your selling journey, with transparent communication, expert negotiation, and personalized guidance every step of the way.
-                                </p>
-                                <div className="flex items-center gap-3 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity pt-4">
-                                    <span className="text-sm font-medium uppercase tracking-wider">Meet Jacob</span>
-                                    <ArrowRight className="h-4 w-4" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <MarketingSection />
             {/* Properties Showcase */}
             <section className="py-32 bg-slate-900" id="past-successes" >
                 <div className="max-w-7xl mx-auto px-6">
@@ -604,7 +462,7 @@ export default function SellHomePage() {
                     </div>
                 </div>
             </section>
-
+            <SellPastSlide />
             {/* CTA Section */}
             <section className="relative py-40 overflow-hidden">
                 <div
