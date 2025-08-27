@@ -101,7 +101,7 @@ export default function Home() {
                 Jacob Hazzard combines years of market expertise with the mindset of a builder, renovator, and homeowner. Known for honest advice and impeccable execution, he helps clients navigate the market with confidence — from thoughtful upgrades to record-breaking closings.
               </p>
               <div className="flex text-md md:text-xl text-gray-600">
-                <Link href='/buy'>
+                <Link href='/contact'>
                   <button href='/buy' className="font-montserrat font-light border border-black text-black bg-transparent px-28 md:px-32 py-3 mr-5 tracking-wider rounded-none transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105">
                     Work with Jacob
                   </button>
@@ -187,7 +187,7 @@ export default function Home() {
             </p>
             <a
               href="/contact"
-              className="inline-block bg-gray-700 text-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+              className="inline-block bg-gray-600 text-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
             >
               Start the Conversation
             </a>

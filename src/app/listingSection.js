@@ -66,11 +66,14 @@ export default function FeaturedListings() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalClosing, setIsModalClosing] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const openModal = (listing) => {
     setSelectedListing(listing);
     setCurrentImageIndex(0);
     setIsModalVisible(true);
+    setFormSubmitted(false);
     document.body.style.overflow = 'hidden';
   };
 
@@ -83,6 +86,7 @@ export default function FeaturedListings() {
       setCurrentImageIndex(0);
       setIsModalVisible(false);
       setIsModalClosing(false);
+      setFormSubmitted(false);
       document.body.style.overflow = 'unset';
     }, 300); // Match the animation duration
   };
@@ -100,6 +104,36 @@ export default function FeaturedListings() {
       setCurrentImageIndex((prev) => 
         prev === 0 ? selectedListing.images.length - 1 : prev - 1
       );
+    }
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mkgvggdq', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        e.target.reset();
+      } else {
+        console.error('Form submission failed');
+        // You could add error handling here if needed
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // You could add error handling here if needed
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -349,56 +383,72 @@ export default function FeaturedListings() {
                   {/* Contact Form */}
                   <div className="border-t border-gray-700 pt-8">
                     <h3 className="text-xl font-medium mb-4 f2">Schedule a Tour</h3>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-4">
-                      {/* Hidden field for property */}
-                      <input type="hidden" name="property" value={selectedListing.address} />
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        <input
-                          type="text"
-                          name="firstName"
-                          placeholder="First Name"
-                          required
-                          className="bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
-                        />
-                        <input
-                          type="text"
-                          name="lastName"
-                          placeholder="Last Name"
-                          required
-                          className="bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
-                        />
+                    
+                    {formSubmitted ? (
+                      <div className="bg-green-900/20 border border-green-800 rounded-lg p-6 text-center">
+                        <div className="flex justify-center mb-4">
+                          <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <h4 className="text-xl font-medium text-green-400 mb-2">Thank You!</h4>
+                        <p className="text-gray-300 mb-4">
+                          Your request has been submitted successfully. We'll get back to you within 24 hours to schedule your tour.
+                        </p>
                       </div>
-                      
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        required
-                        className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
-                      />
-                      
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
-                      />
-                      
-                      <textarea
-                        name="message"
-                        rows="4"
-                        placeholder="Message (optional)"
-                        className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors resize-none"
-                      />
-                      
-                      <button
-                        type="submit"
-                        className="w-full bg-white text-black py-3 px-6 uppercase tracking-wider text-sm font-medium hover:bg-gray-200 transition-colors duration-300"
-                      >
-                        Request Information
-                      </button>
-                    </form>
+                    ) : (
+                      <form onSubmit={handleFormSubmit} className="space-y-4">
+                        {/* Hidden field for property */}
+                        <input type="hidden" name="property" value={selectedListing.address} />
+                        
+                        <div className="grid grid-cols-2 gap-4">
+                          <input
+                            type="text"
+                            name="firstName"
+                            placeholder="First Name"
+                            required
+                            className="bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
+                          />
+                          <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            required
+                            className="bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
+                          />
+                        </div>
+                        
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email Address"
+                          required
+                          className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
+                        />
+                        
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Phone Number"
+                          className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors"
+                        />
+                        
+                        <textarea
+                          name="message"
+                          rows="4"
+                          placeholder="Message (optional)"
+                          className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-colors resize-none"
+                        />
+                        
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-white text-black py-3 px-6 uppercase tracking-wider text-sm font-medium hover:bg-gray-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {isSubmitting ? 'Submitting...' : 'Request Information'}
+                        </button>
+                      </form>
+                    )}
                   </div>
                 </div>
               </div>

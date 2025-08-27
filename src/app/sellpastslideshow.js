@@ -52,7 +52,7 @@ export default function PastSuccessSlideshow() {
 
     return (
         <section id="successes" className="py-20 pb-20 bg-slate-900 text-gray-800">
-            <div className="text-center mb-20 text-white">
+            <div className="text-center mb-20 text-white" id="past-successes">
                 <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-6">
                     Recent Success Stories
                 </div>
