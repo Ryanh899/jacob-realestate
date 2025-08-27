@@ -393,7 +393,7 @@ export default function FeaturedListings() {
                         </div>
                         <h4 className="text-xl font-medium text-green-400 mb-2">Thank You!</h4>
                         <p className="text-gray-300 mb-4">
-                          Your request has been submitted successfully. We'll get back to you within 24 hours to schedule your tour.
+                          Your request has been submitted successfully. We&apos;ll get back to you within 24 hours to schedule your tour.
                         </p>
                       </div>
                     ) : (
