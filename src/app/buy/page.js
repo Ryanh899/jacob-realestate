@@ -290,13 +290,13 @@ const BuyingPage = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-                    <div className="text-center text-white max-w-4xl mx-auto pt-20 md:pt-0">
-                        <div className="mb-8  hidden md:block">
+                    <div className="text-center text-white max-w-4xl mx-auto pt-20">
+                        {/* <div className="mb-8  hidden lg:block">
                             <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm px-8 py-4 border border-white/10">
                                 <MapPin className="h-5 w-5 text-blue-400" />
-                                <span className="text-sm font-medium tracking-[0.15em] uppercase">Coastal Property Acquisition</span>
+                                <span className="text-sm font-medium tracking-[0.15em] uppercase">Expert Property Acquisition</span>
                             </div>
-                        </div>
+                        </div> */}
 
                         <h1 className="text-6xl lg:text-8xl font-extralight leading-[0.85] mb-8 tracking-tight">
                             DISCOVER
@@ -311,11 +311,10 @@ const BuyingPage = () => {
                         <div className="w-24 h-px bg-gradient-to-r from-blue-100 to-transparent mb-8 mx-auto"></div>
 
                         <p className="text-xl text-gray-200 leading-relaxed mb-12 font-light max-w-2xl mx-auto">
-                            Navigate the luxury coastal market with expert guidance. From oceanfront estates to marina residences, find your perfect waterfront sanctuary.
-                        </p>
+                            Whether it’s a coastal estate or a first home, we bring honesty, precision, and skill to every step of your journey.                        </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
+                        {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
                             <div className="border-l-2 border-blue-400 pl-4 text-left">
                                 <div className="text-3xl font-extralight text-blue-400 mb-1">150+</div>
                                 <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Homes Sold</div>
@@ -332,8 +331,25 @@ const BuyingPage = () => {
                                 <div className="text-3xl font-extralight text-blue-400 mb-1">24H</div>
                                 <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Response Time</div>
                             </div>
+                        </div> */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
+                            <div className="border-l-2 border-blue-400 pl-4 text-left">
+                                <div className="text-3xl font-extralight text-blue-400 mb-1">Local</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">OC Expertise</div>
+                            </div>
+                            <div className="border-l-2 border-blue-400 pl-4 text-left">
+                                <div className="text-3xl font-extralight text-blue-400 mb-1">Trusted</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Client Partnerships</div>
+                            </div>
+                            <div className="border-l-2 border-blue-400 pl-4 text-left">
+                                <div className="text-3xl font-extralight text-blue-400 mb-1">Skilled</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Negotiation</div>
+                            </div>
+                            <div className="border-l-2 border-blue-400 pl-4 text-left">
+                                <div className="text-3xl font-extralight text-blue-400 mb-1">24H</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Response Time</div>
+                            </div>
                         </div>
-
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <button onClick={handleScroll} className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-4 group">
                                 <span className="text-lg uppercase tracking-wider">Mortgage Calculator</span>
@@ -586,8 +602,7 @@ const BuyingPage = () => {
                             <span className="block font-light text-blue-600 italic">HOME OWNERSHIP</span>
                         </h2>
                         <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-                            Navigate the luxury coastal real estate market with confidence. Our comprehensive guide ensures you make informed decisions at every step.
-                        </p>
+                            From first homes to dream estates, we help you navigate the Orange County market with clarity and confidence—every step of the way.                        </p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -711,7 +726,7 @@ const BuyingPage = () => {
                             <span className="block font-light text-green-600 italic">BUYING POWER</span>
                         </h2>
                         <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-                            Understand your financial capabilities and monthly payments for your coastal property investment.
+                            Understand your financial capabilities and monthly payments for your new home or investment property.
                         </p>
                     </div>
 
@@ -893,7 +908,7 @@ const BuyingPage = () => {
 
                                     <div className="pt-6 border-t border-gray-200">
                                         <button className="w-full bg-green-600 text-white py-4 px-6 font-medium hover:bg-green-700 transition-all duration-300 flex items-center justify-center gap-3 group">
-                                            <span className="uppercase tracking-wider">Get Pre-Approved</span>
+                                            <span onClick={() => setModalOpen(true)} className="uppercase tracking-wider">Start Your Search</span>
                                             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                         </button>
                                     </div>
@@ -907,41 +922,6 @@ const BuyingPage = () => {
                         </div>
                     </div>
 
-                    {/* Additional Info */}
-                    <div className="mt-16 grid md:grid-cols-3 gap-8">
-                        <div className="text-center p-6 bg-gray-50 border border-gray-200">
-                            <div className="w-12 h-12 bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                                <TrendingUp className="h-6 w-6 text-blue-600" />
-                            </div>
-                            <h3 className="text-lg font-medium text-gray-900 mb-3">Current Rates</h3>
-                            <p className="text-gray-600 font-light text-sm mb-4">
-                                Take advantage of competitive interest rates for qualified coastal property buyers.
-                            </p>
-                            <div className="text-2xl font-light text-blue-600">7.2% APR</div>
-                        </div>
-
-                        <div className="text-center p-6 bg-gray-50 border border-gray-200">
-                            <div className="w-12 h-12 bg-green-100 flex items-center justify-center mx-auto mb-4">
-                                <Shield className="h-6 w-6 text-green-600" />
-                            </div>
-                            <h3 className="text-lg font-medium text-gray-900 mb-3">Loan Programs</h3>
-                            <p className="text-gray-600 font-light text-sm mb-4">
-                                Access specialized financing options for luxury coastal properties and investment homes.
-                            </p>
-                            <div className="text-sm text-green-600 font-medium uppercase tracking-wider">Multiple Options</div>
-                        </div>
-
-                        <div className="text-center p-6 bg-gray-50 border border-gray-200">
-                            <div className="w-12 h-12 bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                                <Clock className="h-6 w-6 text-purple-600" />
-                            </div>
-                            <h3 className="text-lg font-medium text-gray-900 mb-3">Fast Approval</h3>
-                            <p className="text-gray-600 font-light text-sm mb-4">
-                                Streamlined pre-approval process designed for competitive coastal markets.
-                            </p>
-                            <div className="text-2xl font-light text-purple-600">24 Hours</div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -949,20 +929,13 @@ const BuyingPage = () => {
             <section className="py-20 bg-slate-900 text-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
-                        <div className="mb-8">
-                            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-8 py-4 border border-white/20">
-                                <Heart className="h-5 w-5 text-blue-400" />
-                                <span className="text-sm font-medium tracking-[0.15em] uppercase">Ready to Begin</span>
-                            </div>
-                        </div>
-
                         <h2 className="text-4xl lg:text-6xl font-extralight mb-8 tracking-tight">
                             START YOUR
                             <span className="block font-light text-blue-400 italic">JOURNEY</span>
                         </h2>
 
                         <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto mb-12">
-                            Connect with our coastal property specialists and discover your perfect waterfront home today.
+                            Connect with our property specialists and discover your perfect home today.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-md mx-auto">
@@ -972,26 +945,28 @@ const BuyingPage = () => {
                                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </Link>
-                            <button className="border border-white/30 text-white px-8 py-4 font-medium hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 group flex-1">
-                                <span className="uppercase tracking-wider">Call Now</span>
-                                <svg className="h-4 w-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </button>
+                            <a href="tel:+19492919395">
+                                <button className="border border-white/30 text-white px-8 py-4 font-medium hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 group flex-1">
+                                    <span className="uppercase tracking-wider">Call Now</span>
+                                    <svg className="h-4 w-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </button>
+                            </a>
                         </div>
 
                         <div className="mt-12 flex items-center justify-center gap-8 text-gray-400">
                             <div className="flex items-center gap-2">
                                 <div className="w-1 h-1 bg-blue-400"></div>
-                                <span className="text-sm font-light uppercase tracking-wider">Licensed Professional</span>
+                                <span className="text-sm font-light uppercase tracking-wider">Proven Professional</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-1 h-1 bg-blue-400"></div>
-                                <span className="text-sm font-light uppercase tracking-wider">Coastal Expert</span>
+                                <span className="text-sm font-light uppercase tracking-wider">Market Insight</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-1 h-1 bg-blue-400"></div>
-                                <span className="text-sm font-light uppercase tracking-wider">Luxury Specialist</span>
+                                <span className="text-sm font-light uppercase tracking-wider">Client-Focused</span>
                             </div>
                         </div>
                     </div>

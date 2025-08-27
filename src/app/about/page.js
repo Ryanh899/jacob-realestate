@@ -72,7 +72,7 @@ export default function About() {
                         {/* Headshot flush left and wide */}
                         <div className="relative w-full h-[350px] mt-15 md:mt-0 md:w-1/2 aspect-[3/4] md:h-[500px]">
                             <Image
-                                src="/headshot1.jpg"
+                                src="/headshot2.jpeg"
                                 alt="Jacob Hazzard"
                                 fill
                                 className="object-contain object-center"
@@ -129,9 +129,9 @@ export default function About() {
 
                         </div>
                         {/* Image on the Right */}
-                        <div className="w-full md:w-1/2 relative h-[400px] md:h-[500px] overflow-hidden">
+                        <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] overflow-hidden">
                             <Image
-                                src="/headshot1.jpg" // Replace with your actual image path
+                                src="/casual-1.jpeg" // Replace with your actual image path
                                 alt="Jacob Hazzard candid"
                                 fill
                                 className="object-contain object-center"
@@ -141,6 +141,7 @@ export default function About() {
                     </div>
                 </section>
                 {/* Values / Philosophy Section */}
+                {/* Values / Philosophy Section - Option 3: Background Patterns/Textures */}
                 <section className="relative bg-[#242220] text-white py-24 px-6">
                     <div className="max-w-6xl mx-auto text-center mb-16">
                         <p className="uppercase text-sm tracking-widest text-gray-400 mb-3 f2">
@@ -152,62 +153,97 @@ export default function About() {
                         <p className="text-lg md:text-xl text-gray-300 font-light f2 max-w-3xl mx-auto">
                             Every decision, every detail, and every client relationship is guided by a clear set of values that ensure excellence and trust.
                         </p>
-
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-                        {/* Card 1 */}
-                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
-                            <Image
-                                src="/design.jpg" // swap for relevant image
-                                alt="Design Focus"
-                                width={60}
-                                height={60}
-                                className="mb-6 object-contain"
-                            />
-                            <h3 className="text-2xl font-semibold mb-4 f1">Design-Driven Approach</h3>
-                            <p className="text-gray-300 font-light f2">
-                                I believe great design transforms properties and maximizes value. From layout to lighting, no detail is overlooked.
-                            </p>
+                        {/* Card 1 - Design Pattern */}
+                        <div className="relative bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300 overflow-hidden">
+                            {/* Blueprint-style background pattern */}
+                            <div className="absolute inset-0 opacity-5">
+                                <svg width="100%" height="100%" viewBox="0 0 200 200" className="absolute inset-0">
+                                    <defs>
+                                        <pattern id="blueprint" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                            <rect width="40" height="40" fill="none" stroke="#ffffff" strokeWidth="0.5" />
+                                            <rect x="10" y="10" width="20" height="20" fill="none" stroke="#ffffff" strokeWidth="0.5" />
+                                            <circle cx="20" cy="20" r="3" fill="none" stroke="#ffffff" strokeWidth="0.5" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#blueprint)" />
+                                </svg>
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-1 bg-amber-500 mb-6"></div>
+                                <h3 className="text-2xl font-semibold mb-4 f1">Design-Driven Approach</h3>
+                                <p className="text-gray-300 font-light f2">
+                                    I believe great design transforms properties and maximizes value. From layout to lighting, no detail is overlooked.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
-                            <Image
-                                src="/trust.jpg"
-                                alt="Trust"
-                                width={60}
-                                height={60}
-                                className="mb-6 object-contain"
-                            />
-                            <h3 className="text-2xl font-semibold mb-4 f1">Client-First Mindset</h3>
-                            <p className="text-gray-300 font-light f2">
-                                Your goals guide my every move. I listen, adapt, and act with your best interests at the forefront.
-                            </p>
+                        {/* Card 2 - Trust/Connection Pattern */}
+                        <div className="relative bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300 overflow-hidden">
+                            {/* Connection nodes pattern */}
+                            <div className="absolute inset-0 opacity-5">
+                                <svg width="100%" height="100%" viewBox="0 0 200 200" className="absolute inset-0">
+                                    <defs>
+                                        <pattern id="network" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                                            <circle cx="25" cy="25" r="2" fill="#ffffff" />
+                                            <circle cx="0" cy="0" r="1" fill="#ffffff" />
+                                            <circle cx="50" cy="0" r="1" fill="#ffffff" />
+                                            <circle cx="0" cy="50" r="1" fill="#ffffff" />
+                                            <circle cx="50" cy="50" r="1" fill="#ffffff" />
+                                            <line x1="25" y1="25" x2="0" y2="0" stroke="#ffffff" strokeWidth="0.5" />
+                                            <line x1="25" y1="25" x2="50" y2="0" stroke="#ffffff" strokeWidth="0.5" />
+                                            <line x1="25" y1="25" x2="0" y2="50" stroke="#ffffff" strokeWidth="0.5" />
+                                            <line x1="25" y1="25" x2="50" y2="50" stroke="#ffffff" strokeWidth="0.5" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#network)" />
+                                </svg>
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-1 bg-blue-500 mb-6"></div>
+                                <h3 className="text-2xl font-semibold mb-4 f1">Client-First Mindset</h3>
+                                <p className="text-gray-300 font-light f2">
+                                    Your goals guide my every move. I listen, adapt, and act with your best interests at the forefront.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* Card 3 */}
-                        <div className="bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300">
-                            <Image
-                                src="/results.jpg"
-                                alt="Results"
-                                width={60}
-                                height={60}
-                                className="mb-6 object-contain"
-                            />
-                            <h3 className="text-2xl font-semibold mb-4 f1">Results That Last</h3>
-                            <p className="text-gray-300 font-light f2">
-                                From record-breaking sales to lasting relationships, my work leaves a mark long after closing day.
-                            </p>
+                        {/* Card 3 - Success/Growth Pattern */}
+                        <div className="relative bg-[#2e2b28] p-8 text-left hover:scale-105 transition-transform duration-300 overflow-hidden">
+                            {/* Upward trending pattern */}
+                            <div className="absolute inset-0 opacity-5">
+                                <svg width="100%" height="100%" viewBox="0 0 200 200" className="absolute inset-0">
+                                    <defs>
+                                        <pattern id="growth" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                                            <polyline points="10,50 20,40 30,30 40,20 50,10" stroke="#ffffff" strokeWidth="1" fill="none" />
+                                            <circle cx="15" cy="45" r="1.5" fill="#ffffff" />
+                                            <circle cx="25" cy="35" r="1.5" fill="#ffffff" />
+                                            <circle cx="35" cy="25" r="1.5" fill="#ffffff" />
+                                            <circle cx="45" cy="15" r="1.5" fill="#ffffff" />
+                                            <polygon points="45,10 50,10 50,15" fill="#ffffff" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#growth)" />
+                                </svg>
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-1 bg-green-500 mb-6"></div>
+                                <h3 className="text-2xl font-semibold mb-4 f1">Results That Last</h3>
+                                <p className="text-gray-300 font-light f2">
+                                    I measure success by both the financial gains I deliver and the lasting partnerships I build—clients who return for their next transaction and refer their closest friends.
+                                </p>
+                            </div>
                         </div>
                     </div>
+
                     <div>
                         <p className="text-lg md:text-md text-gray-300 font-light text-center f2 leading-relaxed p-10">
                             Having spent his entire life in the area, Jacob understands the nuances of each neighborhood—from blufftop estates to off-market opportunities—and uses that insight to benefit every client he serves. Backed by a top-tier luxury brokerage, he offers a refined, relationship-driven experience grounded in integrity and performance.
                         </p>
                     </div>
                 </section>
-
                 {/* Call to Action */}
                 <section className="relative bg-black py-24 px-6 text-center text-white overflow-hidden">
                     <div className="absolute inset-0 bg-[url('/cordoba4.jpeg')] opacity-40 bg-cover bg-center z-0" />

@@ -51,7 +51,7 @@ export default function PastSuccessSlideshow() {
     }, []);
 
     return (
-        <section id="successes" className="py-20 pb-0 bg-slate-900 text-gray-800">
+        <section id="successes" className="py-20 pb-20 bg-slate-900 text-gray-800">
             <div className="text-center mb-20 text-white">
                 <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-6">
                     Recent Success Stories
@@ -67,15 +67,15 @@ export default function PastSuccessSlideshow() {
                 spaceBetween={40}
                 slidesPerView={1}
                 loop
-                autoplay={{ delay: 7000 }}
+                autoplay={{ delay: 20000 }}
                 pagination={{ clickable: true }}
                 navigation
-                className="max-w-7xl mx-auto px-4 bg-white"
+                className="max-w-7xl mx-auto px-4 "
             >
                 {listings.map((listing, i) => (
                     <SwiperSlide key={i}>
                         <div
-                            className="grid md:grid-cols-2 overflow-hidden bg-white group shadow-lg"
+                            className="grid md:grid-cols-2 overflow-hidden group shadow-lg"
                             data-aos="fade-up"
                             data-aos-anchor-placement="top-bottom"
                         >
@@ -116,16 +116,16 @@ export default function PastSuccessSlideshow() {
                             </div>
 
                             {/* Right: Content */}
-                            <div className="p-12 flex flex-col justify-center bg-white relative z-20">
+                            <div className="p-12 flex flex-col justify-center relative z-20">
                                 <p
-                                    className="text-sm uppercase tracking-widest text-[#b29567] font-semibold mb-3"
+                                    className="text-sm uppercase tracking-widest text-blue-400 font-semibold mb-3"
                                     data-aos="fade-right"
                                 >
                                     {listing.address}
                                 </p>
 
                                 <h3
-                                    className="text-4xl font-bold mb-2 text-gray-900"
+                                    className="text-4xl font-bold mb-2 text-gray-200"
                                     data-aos="fade-right"
                                     data-aos-delay="100"
                                 >
@@ -133,7 +133,7 @@ export default function PastSuccessSlideshow() {
                                 </h3>
 
                                 <h4
-                                    className="text-xl font-medium mb-6 text-[#b29567]"
+                                    className="text-xl font-medium mb-6 text-blue-400"
                                     data-aos="fade-right"
                                     data-aos-delay="150"
                                 >
@@ -145,13 +145,13 @@ export default function PastSuccessSlideshow() {
                                     data-aos="fade-right"
                                     data-aos-delay="200"
                                 >
-                                    <h5 className="font-semibold text-gray-800 mb-4 text-lg uppercase tracking-wide">
+                                    <h5 className="font-semibold text-gray-200 mb-4 text-lg uppercase tracking-wide">
                                         Key Achievements
                                     </h5>
-                                    <ul className="space-y-3 text-gray-700">
+                                    <ul className="space-y-3 text-gray-200">
                                         {listing.highlights.map((point, idx) => (
                                             <li key={idx} className="flex items-start">
-                                                <div className="w-2 h-2 bg-[#b29567] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                                 <span className="text-base leading-relaxed">{point}</span>
                                             </li>
                                         ))}
@@ -161,7 +161,7 @@ export default function PastSuccessSlideshow() {
                                 <div className="mt-auto pt-6">
                                     <a
                                         href="/contact"
-                                        className="inline-flex items-center px-8 py-3 border-2 border-[#b29567] text-[#b29567] text-lg font-semibold uppercase tracking-wider hover:bg-[#b29567] hover:text-white transition duration-300 group"
+                                        className="inline-flex items-center px-8 py-3 border-2 border-blue-400 text-blue-400 text-lg font-semibold uppercase tracking-wider hover:bg-blue-400 hover:text-gray-200 transition duration-300 group"
                                         data-aos="fade-right"
                                         data-aos-delay="400"
                                     >
@@ -180,7 +180,7 @@ export default function PastSuccessSlideshow() {
             <style jsx global>{`
         .swiper-button-next,
         .swiper-button-prev {
-          color: #b29567;
+          color: #60A5FA;
           transition: transform 0.3s ease;
         }
 
@@ -190,14 +190,14 @@ export default function PastSuccessSlideshow() {
         }
 
         .swiper-pagination-bullet {
-          background-color: #d4c3a2;
+          background-color: #60A5FA;
           opacity: 0.5;
           width: 12px;
           height: 12px;
         }
 
         .swiper-pagination-bullet-active {
-          background-color: #b29567;
+          background-color: #60A5FA;
           opacity: 1;
         }
       `}</style>

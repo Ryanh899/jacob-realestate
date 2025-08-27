@@ -11,7 +11,7 @@ export default function TermsOfUse() {
     <main className="max-w-4xl mx-auto px-6 py-16 text-gray-800 bg-[#f9f7f4]">
       <h1 className="text-3xl md:text-4xl font-heading mb-4">Terms of Use</h1>
       <p className="text-sm text-gray-600 mb-6">
-        Effective date: <strong>[Effective Date]</strong>. Please read these Terms of Use (&quot;Terms&quot;) carefully before using the website at <strong>jacobhazzardrealestate.com</strong> (the &quot;Site&quot;). These Terms govern your access to and use of the Site and services provided by <strong>[Business Name / Jacob Hazzard]</strong>.
+        Effective date: <strong>08-27-2025</strong>. Please read these Terms of Use (&quot;Terms&quot;) carefully before using the website at <strong>jacobhazzardrealestate.com</strong> (the &quot;Site&quot;). These Terms govern your access to and use of the Site and services provided by Jacob Hazzard Real Estate.
       </p>
 
       <section className="mb-6">
@@ -59,28 +59,28 @@ export default function TermsOfUse() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">7. Intellectual Property</h2>
         <p className="text-base text-gray-700">
-          All Site content (text, images, logos, layout) is owned or licensed by [Business Name]. You may not use our trademarks or copyrighted content without written permission.
+          All Site content (text, images, logos, layout) is owned or licensed by Jacob Hazzard Real Estate. You may not use our trademarks or copyrighted content without written permission.
         </p>
       </section>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">8. Limitation of Liability</h2>
         <p className="text-base text-gray-700">
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, [BUSINESS NAME] WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SITE. OUR TOTAL AGGREGATE LIABILITY IS LIMITED TO THE AMOUNT, IF ANY, YOU PAID US IN THE PRIOR 12 MONTHS FOR ACCESS TO THE SITE.
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, Jacob Hazzard Real Estate WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SITE. OUR TOTAL AGGREGATE LIABILITY IS LIMITED TO THE AMOUNT, IF ANY, YOU PAID US IN THE PRIOR 12 MONTHS FOR ACCESS TO THE SITE.
         </p>
       </section>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">9. Indemnification</h2>
         <p className="text-base text-gray-700">
-          You agree to indemnify and hold harmless [Business Name], its affiliates, and their officers, directors, employees, and agents from any claims arising from your use of the Site or violation of these Terms.
+          You agree to indemnify and hold harmless Jacob Hazzard Real Estate, its affiliates, and their officers, directors, employees, and agents from any claims arising from your use of the Site or violation of these Terms.
         </p>
       </section>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">10. Governing Law</h2>
         <p className="text-base text-gray-700">
-          These Terms are governed by the laws of the State of <strong>[Your State]</strong>, without regard to conflict of law principles. Any dispute will be resolved in the state or federal courts located in <strong>[Your County, Your State]</strong>.
+          These Terms are governed by the laws of the State of California, without regard to conflict of law principles. Any dispute will be resolved in the state or federal courts located in Orange County, California.
         </p>
       </section>
 
@@ -95,8 +95,7 @@ export default function TermsOfUse() {
         <h2 className="text-xl font-semibold mb-2">12. Contact</h2>
         <p className="text-base text-gray-700">
           Questions about these Terms: <br />
-          Email: <a href="mailto:[contact@example.com]" className="underline">[contact@example.com]</a><br />
-          Address: [Business address — optional]
+          Email: <a href="mailto:[contact@example.com]" className="underline">jacobhazzardrealestate@gmail.com</a><br />
         </p>
       </section>
 

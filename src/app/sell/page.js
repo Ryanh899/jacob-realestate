@@ -125,11 +125,11 @@ export default function SellHomePage() {
                     ))}
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 py-50 pb-0 md:py-20">
-                    <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 py-50 pb-0 md:py-25">
+                    <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center md:pt-20">
                         {/* Left Side - Content */}
                         <div className="text-white">
-                            <div className="mb-8  hidden md:block">
+                            <div className="mb-8  hidden lg:block">
                                 <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm px-8 py-4 border border-white/10 ">
                                     <MapPin className="h-5 w-5 text-blue-400" />
                                     <span className="text-sm font-medium tracking-[0.15em] uppercase">Expert Real Estate Service</span>
@@ -392,76 +392,6 @@ export default function SellHomePage() {
             </section>
             <MarketingSection />
             {/* Properties Showcase */}
-            <section className="py-32 bg-slate-900" id="past-successes" >
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-20 text-white">
-                        <div className="inline-block text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-6">
-                            Recent Success Stories
-                        </div>
-                        <h2 className="text-6xl font-extralight mb-8 leading-tight tracking-tight">
-                            PROVEN
-                            <span className="block text-blue-400 italic font-light">RESULTS</span>
-                        </h2>
-                        <div className="w-24 h-px bg-blue-400 mx-auto"></div>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/5] overflow-hidden mb-6">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Sold Property 1"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute top-4 left-4 bg-blue-500 text-white px-4 py-2 text-sm font-medium uppercase tracking-wider">
-                                    SOLD
-                                </div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$2.4M</div>
-                                    <div className="text-sm opacity-80">Newport Beach Home</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/5] overflow-hidden mb-6">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Sold Property 2"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute top-4 left-4 bg-blue-500 text-white px-4 py-2 text-sm font-medium uppercase tracking-wider">
-                                    SOLD
-                                </div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$1.8M</div>
-                                    <div className="text-sm opacity-80">Irvine Family Home</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/5] overflow-hidden mb-6">
-                                <Image
-                                    src="/ameno2.jpeg"
-                                    alt="Sold Property 3"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute top-4 left-4 bg-blue-500 text-white px-4 py-2 text-sm font-medium uppercase tracking-wider">
-                                    SOLD
-                                </div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="text-2xl font-light">$4.2M</div>
-                                    <div className="text-sm opacity-80">Laguna Beach Estate</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <SellPastSlide />
             {/* CTA Section */}
             <section className="relative py-40 overflow-hidden">

@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
         <h2 className="text-xl font-semibold mb-2">12. Contact</h2>
         <p className="text-base text-gray-700">
           For privacy questions or to exercise your rights, contact: <br />
-          Email: <a href="mailto:jacob.hazzard@cbrealty.com" className="underline">jacob.hazzard@cbrealty.com</a><br />
+          Email: <a href="mailto:jacobhazzardrealestate@gmail.com" className="underline">jacobhazzardrealestate@gmail.com</a><br />
           Address: 222 Avenida Del Mar, San Clemente, CA 92672
         </p>
       </section>
