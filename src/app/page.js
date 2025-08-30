@@ -5,12 +5,13 @@ import Link from 'next/link';
 import PastSuccessSlideshow from './pastSection';
 import FeaturedListings from './listingSection';
 import Footer from './footer';
+import { icons } from 'lucide-react';
 
 export const metadata = {
-  title: "San Clemente Realtor | Jacob Hazzard, Luxre Realty",
+  title: "Jacob Hazzard, Luxre Realty | San Clemente Realtor",
   description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
   openGraph: {
-    title: "San Clemente Realtor | Jacob Hazzard",
+    title: " Jacob Hazzard | San Clemente Realtor",
     description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
     url: "https://jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard Real Estate",
@@ -19,9 +20,12 @@ export const metadata = {
         url: "/white-transparent-bigger.png",
         width: 1200,
         height: 630,
-        alt: "Beautiful coastal home with ocean view",
+        alt: "Jacob Hazzard Real Estate Logo",
       },
     ],
+    icons: {
+      icon: "/white-transparent-bigger.png",
+    },
     locale: "en_US",
     type: "website",
   },
@@ -32,12 +36,12 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Jacob Hazzard",
-    "image": "https://yourwebsite.com/profile.jpg",
-    "url": "https://yourwebsite.com",
-    "telephone": "+1-555-555-5555",
+    "image": "https://jacobhazzardrealestate.com/profile.jpg",
+    "url": "https://jacobhazzardrealestate.com",
+    "telephone": "+1-949-291-9395",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Coastal Blvd",
+      "streetAddress": "222 Avenida Del Mar, San Clemente, CA 92672",
       "addressLocality": "San Clemente",
       "addressRegion": "CA",
       "postalCode": "92672",
