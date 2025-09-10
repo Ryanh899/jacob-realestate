@@ -58,7 +58,7 @@ export default function About() {
                         </h1>
 
                         <p className="text-lg md:text-2xl font-light f2 text-white/90">
-                            A real estate strategist with a builder&apos;s eye and a designer&apos;s touch — serving San Clemente and the OC coast.
+                            A real estate strategist with a builder&apos;s eye and a designer&apos;s touch — serving San Clemente and the CA coast.
                         </p>
                     </motion.div>
 
