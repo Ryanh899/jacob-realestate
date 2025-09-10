@@ -29,7 +29,7 @@ export const metadata = {
     siteName: "Jacob Hazzard — Luxre Realty",
     images: [
       {
-        url: "/white-transparent-bigger.png",
+        url: "/jg-logo-2.png",
         width: 1200,
         height: 630,
         alt: "Beautiful coastal home with ocean view",

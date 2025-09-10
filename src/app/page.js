@@ -17,14 +17,14 @@ export const metadata = {
     siteName: "Jacob Hazzard Real Estate",
     images: [
       {
-        url: "/white-transparent-bigger.png",
+        url: "/jg-logo-2.png",
         width: 1200,
         height: 630,
         alt: "Jacob Hazzard Real Estate Logo",
       },
     ],
     icons: {
-      icon: "/logo.js.ico",
+      icon: "/favicon.png",
     },
     locale: "en_US",
     type: "website",
@@ -168,7 +168,7 @@ export default function Home() {
             With experience in renovation, buying, selling, and investments, Jacob delivers real estate with honesty, precision, and a hometown touch.          </p>
           <div className="py-0 flex justify-center items-center ">
             <Image
-              src="/white-transparent-bigger.png"
+              src="/jg-logo-2.png"
               alt="Logo"
               width={400}
               height={250}

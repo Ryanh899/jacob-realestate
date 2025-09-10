@@ -69,7 +69,7 @@ const Navigation = () => {
             <nav className="absolute top-0 left-0 right-0 z-40 px-8 justify-between items-center text-sm bg-transparent text-white tracking-wide uppercase hidden md:flex">
                 <Link href='/'>
                     <Image
-                        src="/white-transparent-bigger.png"
+                        src="/jg-logo-2.png"
                         alt="Logo"
                         width={400}
                         height={250}
@@ -165,7 +165,7 @@ const Navigation = () => {
             {/* Mobile Nav */}
             <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
                 <Image
-                    src="/white-transparent-bigger.png"
+                    src="/jg-logo-2.png"
                     alt="Logo"
                     width={130}
                     height={70}

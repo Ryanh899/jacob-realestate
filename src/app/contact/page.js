@@ -190,7 +190,7 @@ export default function ContactPage() {
                                 <div className="text-center mb-16">
                                     <div className="w-20 h-20 flex items-center justify-center mx-auto mb-15">
                                         <Image
-                                            src="/white-transparent-bigger.png"
+                                            src="/jg-logo-2.png"
                                             alt="Logo"
                                             width={200}
                                             height={200}

@@ -40,7 +40,7 @@ const listings = [
             'Negotiated favorable terms for buyer',
             'Seamless transaction coordination'
         ],
-        image: '/ameno4.jpeg',
+        image: '/lapwing1.jpeg',
         badge: 'EXCLUSIVE ACCESS'
     }
 ];

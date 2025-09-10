@@ -14,7 +14,7 @@ export default function Footer() {
                         Delivering excellence in every transaction, from first-time buyers to luxury estates.
                     </p>
                     <Image
-                        src="/white-transparent-bigger.png"
+                        src="/jg-logo-2.png"
                         alt="Logo"
                         width={250}
                         height={200}
