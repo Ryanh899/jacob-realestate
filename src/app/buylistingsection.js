@@ -190,7 +190,7 @@ export default function BuyFeaturedListings() {
 
   return (
     <>
-      <section id="listings" className="bg-[#1a1a1a]">
+      <section id="buy-listings" className="bg-[#1a1a1a]">
         {/* Heading */}
         <div className="text-center text-gray-200 px-4 pt-15 pb-10 md:pt-20 pb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight f1" data-aos="fade-up">
