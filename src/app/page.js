@@ -24,7 +24,7 @@ export const metadata = {
       },
     ],
     icons: {
-      icon: "https://jacob-realestate.vercel.app/icon.png",
+      icon: "/icon.png",
     },
     locale: "en_US",
     type: "website",
