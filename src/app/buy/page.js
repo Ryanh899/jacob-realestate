@@ -5,6 +5,9 @@ import { Home, MapPin, Calculator, CheckCircle, ArrowRight, DollarSign, Trending
 import Footer from '../footer';
 import Link from 'next/link';
 import Navigation from '../navbar';
+import BuyFeaturedListings from '../buylistingsection';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const BuyingPage = () => {
     const [activeGuideSection, setActiveGuideSection] = useState(0);
@@ -147,6 +150,10 @@ const BuyingPage = () => {
     useEffect(() => {
         calculateMortgage();
     }, [mortgageData]);
+
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -924,6 +931,8 @@ const BuyingPage = () => {
 
                 </div>
             </section>
+            {/* Current Listings */}
+            <BuyFeaturedListings />
 
             {/* CTA Section */}
             <section className="py-20 bg-slate-900 text-white">

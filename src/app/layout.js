@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourwebsite.com" />
+        <link rel="canonical" href="https://jacobhazzardrealestate.com" />
       </Head>
       <body
         className={`${inter.variable} ${montserrat.variable}`}

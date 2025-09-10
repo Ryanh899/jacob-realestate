@@ -100,7 +100,7 @@ const listings = [
 ];
 
 
-export default function FeaturedListings() {
+export default function BuyFeaturedListings() {
   const [selectedListing, setSelectedListing] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
