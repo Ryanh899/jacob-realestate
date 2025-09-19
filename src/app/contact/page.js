@@ -121,7 +121,7 @@ export default function ContactPage() {
                                 <h3 className="text-xl font-semibold f1 mb-2">Call Direct</h3>
                                 <Link href="tel:+9492919395" className="text-lg f2 hover:text-white/80 transition">
                                     (949) 291-9395
-                                </Link>
+                                </Link> 
                                 <p className="text-sm f2 text-white/60 mt-2">Available 7 days a week</p>
                             </div>
 

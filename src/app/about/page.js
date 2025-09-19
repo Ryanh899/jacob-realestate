@@ -72,7 +72,7 @@ export default function About() {
                         {/* Headshot flush left and wide */}
                         <div className="relative w-full h-[350px] mt-15 md:mt-0 md:w-1/2 aspect-[3/4] md:h-[500px]">
                             <Image
-                                src="/headshot2.jpeg"
+                                src="/headshot3.png"
                                 alt="Jacob Hazzard"
                                 fill
                                 className="object-contain object-center"

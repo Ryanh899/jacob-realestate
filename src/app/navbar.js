@@ -3,17 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-
-
+import { useRouter, usePathname } from 'next/navigation';
 
 const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
     const router = useRouter();
+    const pathname = usePathname();
 
     const navItems = [
+        { label: 'Home', href: '/' },
         { 
             label: 'Sell', 
             href: '/sell',
@@ -34,6 +34,14 @@ const Navigation = () => {
         { label: 'About', href: '/about' }
     ];
 
+    // Filter out Home nav item if we're on the home page
+    const filteredNavItems = navItems.filter(item => {
+        if (item.label === 'Home' && pathname === '/') {
+            return false;
+        }
+        return true;
+    });
+
     const handleSmoothScroll = (href) => {
     if (href.includes('#')) {
         const [path, hash] = href.split('#');
@@ -53,7 +61,6 @@ const Navigation = () => {
         router.push(href);
     }
 };
-
 
     return (
         <div>
@@ -79,7 +86,7 @@ const Navigation = () => {
                 </Link>
 
                 <div className="space-x-6 flex items-center">
-                    {navItems.map(({ label, href, dropdownItems }) => (
+                    {filteredNavItems.map(({ label, href, dropdownItems }) => (
                         <div 
                             key={label} 
                             className="relative group"
@@ -205,7 +212,7 @@ const Navigation = () => {
                     style={{ animation: 'fadeIn 0.3s ease forwards, slideDown 0.4s ease forwards' }}
                 >
                     {/* Main navigation items */}
-                    {navItems.map(({ label, href, dropdownItems }) => (
+                    {filteredNavItems.map(({ label, href, dropdownItems }) => (
                         <div key={label}>
                             <Link
                                 href={href}
