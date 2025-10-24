@@ -22,6 +22,11 @@ export const metadata = {
   },
   description: "Jacob Hazzard — Luxury & investment real estate agent at Luxre Realty in San Clemente, CA. Specializing in renovations, selling, buying, rentals, and investment opportunities across Orange County.",
   keywords: ["Jacob Hazzard", "Luxre Realty", "San Clemente realtor", "Orange County real estate", "property renovations", "investment property OC"],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Jacob Hazzard | Luxre Realty — San Clemente & Orange County",
     description: "Luxury real estate, renovations, investments, rentals, and sales across Orange County, California. Based in San Clemente.",
@@ -53,6 +58,7 @@ export default function RootLayout({ children }) {
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://jacobhazzardrealestate.com" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <body
         className={`${inter.variable} ${montserrat.variable}`}
