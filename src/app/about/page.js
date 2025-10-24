@@ -107,7 +107,6 @@ export default function About() {
                             transition={{ duration: 0.8 }}
                             className="text-2xl italic font-light f2 text-gray-700 mb-6"
                         >
-                            “Jacob didn&apos;t just sell our home — he elevated it.”
                             “Jacob Hazzard is as good as it gets! He found the exact type of niche property we were looking for”
                         </motion.blockquote>
                         <p className="text-sm uppercase tracking-widest f2 text-gray-500">— Colin Powers, Client</p>
