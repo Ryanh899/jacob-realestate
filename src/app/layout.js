@@ -24,8 +24,7 @@ export const metadata = {
   keywords: ["Jacob Hazzard", "Luxre Realty", "San Clemente realtor", "Orange County real estate", "property renovations", "investment property OC"],
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Jacob Hazzard | Luxre Realty — San Clemente & Orange County",
