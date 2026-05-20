@@ -84,7 +84,7 @@ export default function Home() {
               alt="Jacob Hazzard"
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-[center_30%] md:object-[center_25%] lg:object-center"
             />
           </div>
           {/* Right side content */}
