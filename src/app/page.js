@@ -24,7 +24,7 @@ export const metadata = {
       },
     ],
     icons: {
-      icon: "/icon.png",
+      icon: "/favicon.ico",
     },
     locale: "en_US",
     type: "website",

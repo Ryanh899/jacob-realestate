@@ -23,7 +23,7 @@ export const metadata = {
   description: "Jacob Hazzard — Luxury & investment real estate agent at Luxre Realty in San Clemente, CA. Specializing in renovations, selling, buying, rentals, and investment opportunities across Orange County.",
   keywords: ["Jacob Hazzard", "Luxre Realty", "San Clemente realtor", "Orange County real estate", "property renovations", "investment property OC"],
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
